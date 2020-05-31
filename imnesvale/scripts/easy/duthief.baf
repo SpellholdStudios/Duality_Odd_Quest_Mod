@@ -1,0 +1,81 @@
+//Could use some work.
+//For now they hide before they get to you, they backstab someone
+//Then they just go about fighting.
+
+IF
+	Global("fighterMove", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("fighterMove", "LOCALS", 1)
+		Hide()
+		MoveToObject("dumayor")
+		Continue()
+END
+
+If
+	See(NearestEnemyOf(MySelf()))
+	!Range(NearestEnemyOf(MySelf()), 30)
+	!StateCheck(Myself(),STATE_INVISIBLE)
+Then
+	Response #100
+		Hide()
+    	SetGlobal("backstabTime", "LOCALS", 1)
+End
+
+If
+	StateCheck(Myself(),STATE_INVISIBLE)
+	See(NearestEnemyOf(MySelf()))
+	Range(NearestEnemyOf(MySelf()), 10)
+   	Global("backstabTime", "LOCALS", 1)
+Then
+	Response #100
+		AttackOneRound(NearestEnemyOf(MySelf()))
+    	SetGlobal("backstabTime", "LOCALS", 0)
+		Continue()
+End
+
+if
+	See(NearestEnemyOf(Myself()))
+	StateCheck(Myself(),STATE_INVISIBLE)
+	Range(NearestEnemyOf(MySelf()), 30)
+then
+	response #100
+		MoveToObject(NearestEnemyOf(Myself()))
+		Continue()
+End
+
+IF 
+	HPPercentLT(Myself,20)
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(),50)	
+		UseItem("POTN55",Myself)			
+		Wait(2)
+END
+
+IF
+	HPPercentLT(MySelf(), 55)										
+	HasItem("POTN55",Myself())						
+THEN
+	RESPONSE #100
+		UseItem("POTN55", MySelf())
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+If
+	!ActuallyInCombat()
+	See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+End
+
+If
+	See(NearestEnemyOf(Myself))
+then
+	response #100
+		AttackOneRound(LastSeenBy)
+		Continue()
+end

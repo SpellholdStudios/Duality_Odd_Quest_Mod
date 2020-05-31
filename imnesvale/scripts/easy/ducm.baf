@@ -1,0 +1,14 @@
+//For the Spirit that will help a ranger.
+//I never bothered to write it.
+
+IF 
+	HPPercentLT(Myself,20)
+	OR(2)
+		AttackedBy([ANYONE],DEFAULT)			
+		Range(NearestEnemyOf(),4)		
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(),50)	
+		UseItem("POTN55",Myself)			
+		Wait(2)
+END

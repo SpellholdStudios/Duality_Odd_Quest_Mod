@@ -1,0 +1,53 @@
+//Needs work as well.
+//Small selection of spells
+//or attacks.
+
+IF
+	Global("duDemonMove", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("duDemonMove", "LOCALS", 1)
+		MoveToObject("dumayor")
+		Continue()
+END
+
+if
+	See(NearestEnemyOf(Myself))
+	RandomNum(10, 1)
+then
+	response #100
+		ForceSpell(NearestEnemyOf(myself), DEMON_FEAR)
+end
+
+if
+	See(NearestEnemyOf(Myself))
+	RandomNum(15, 1)
+then
+	response #100
+		ForceSpell(NearestEnemyOf(myself), INQUIS_DISPEL_MAGIC)
+end
+
+if
+	See(NearestEnemyOf(Myself))
+	RandomNum(15, 1)
+then
+	response #100
+		ForceSpell(NearestEnemyOf(myself), WIZARD_HOLD_PERSON)
+end
+
+if
+	See(NearestEnemyOf(Myself))
+	RandomNum(50, 1)
+then
+	response #100
+		ForceSpell(NearestEnemyOf(myself), WIZARD_DELAYED_BLAST_FIREBALL)
+end
+
+
+If
+	See(NearestEnemyOf(Myself))
+then
+	response #100
+		Attack(LastSeenBy(Myself))
+		Continue()
+end

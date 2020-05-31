@@ -1,0 +1,84 @@
+//Moves the archer towards the Mayor, if he sees someone, he stops and wails on them
+//Only happens at start
+IF
+	Global("duFighterMove", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("duFighterMove", "LOCALS", 1)
+		EquipRanged()
+		MoveToObject("dumayor")
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+//Near death = run for your life
+IF 
+	HPPercentLT(Myself,20)		
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(MySelf()),50)	
+		UseItem("POTN55",Myself())			
+		Wait(2)
+END
+
+//Probably don't even need this, but if he's not in combat, should make him attack.
+If
+	!ActuallyInCombat()
+	See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+End
+
+//Healing potions. Used if he gets close to 50% life. Makes him hard to kill.
+//And he attacks immediately after using a potion, so as not to waste time
+IF
+	HPPercentLT(MySelf(), 55)										
+	HasItem("POTN55",Myself())						
+THEN
+	RESPONSE #100
+		UseItem("POTN55", MySelf())
+		Attack(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+//Makes Mages as the primary targets
+//If there are mages, they get shot at
+
+IF	
+	!StateCheck(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+	See(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]))
+THEN
+	RESPONSE #100
+		Attack(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		Continue()
+END	
+
+IF	
+	!StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+	See(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
+THEN
+	RESPONSE #100
+		Attack(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		Continue()
+END	
+IF	
+	!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+	See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		Continue()
+END
+
+//Final, if the script made it this far without triggering anything,
+//then just wail on whatever you see
+
+If
+	See(NearestEnemyOf(Myself))
+then
+	response #100
+		Attack(LastSeenBy)
+		Continue()
+end

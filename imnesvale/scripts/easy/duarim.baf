@@ -1,0 +1,231 @@
+//Arimayus, the son.
+//As usual, he spells up at start, and sets the globals for later use.
+
+If
+	Global("casterStart", "LOCALS", 0)
+Then
+	Response #100
+		SetGlobal("casterStart", "LOCALS", 1)
+		SetGlobal("allCastersTimer", "LOCALS", 6)
+		SetGlobal("untriggered", "locals", 0)
+		SetGlobal("almostDead", "locals", 0)		
+		SetGlobal("duSpellTrigger", "LOCALS", 0)
+		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself(), WIZARD_BLUR)
+		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
+		ReallyForceSpell(Myself(), WIZARD_PROTECTION_FROM_ENERGY)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_TRAP)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_INVOCATION)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_DIVINATION)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_ABJURATION)
+		ReallyForceSpell(Myself(), WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+End
+
+//Random spell trigger. Hope it actually works.
+
+//IF
+//	RandomNum(5, 1)
+//	Global("duSpellTrigger", "LOCALS", 0)
+//	See(NearestEnemyOf(Myself))
+//THEN
+//	response #100
+//		DisplayStringHead(Myself, @64)
+//		SetGlobal("duSpellTrigger", "LOCALS", 1)
+//		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_GREATER_MALISON)
+//		ReallyForceSpell(NearestEnemyOf(Myself), CLERIC_DOOM)
+//		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_POLYMORPH_OTHER)
+//END
+
+//A heal if near death, functional on Hard/Are you out of your mind
+//All these triggers only happen once.
+
+//IF
+//	HPPercentLT(MySelf(), 20)
+//	Global("almostDead", "locals", 0)
+//THEN
+//	RESPONSE #100
+//		SetGlobal("almostDead", "locals", 1)
+//		DisplayStringHead(MySelf(), @66)
+//		ReallyForceSpell(MySelf(), CLERIC_HEAL)
+//		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
+//		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+//		ReallyForceSpell(Myself(), WIZARD_BLUR)
+//		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
+//		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
+//		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
+//		ReallyForceSpell(Myself(), WIZARD_PROTECTION_FROM_ENERGY)
+//		ReallyForceSpell(Myself(), WIZARD_SPELL_TRAP)
+//		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_INVOCATION)
+//		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_DIVINATION)
+//		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_ABJURATION)
+//		ReallyForceSpell(Myself(), WIZARD_GLOBE_OF_INVULNERABILITY)
+//		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
+//		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
+//		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
+//		ReallyForceSpell(FourthNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
+//		ReallyForceSpell(FifthNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
+//		ReallyForceSpell(SixthNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
+//		Continue()
+//End
+
+//Probably the most absurd of the triggers.
+//If he sees your party, your suddenly cleared of all protections and looking at three Planetars.
+//This is only enabled on Are you out of your mind
+
+//IF
+//	Range(NearestEnemyOf(MySelf()), 30)
+//	Range(SecondNearestEnemyOf(MySelf()), 30)
+//	Range(ThirdNearestEnemyOf(MySelf()), 30)
+//	Global("untriggered", "locals", 0)
+//Then
+//	Response #100
+//		SetGlobal("untriggered", "locals", 1)
+//		DisplayStringHead(MySelf(), @64)
+//		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_SPELL_STRIKE)
+//		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_SPELL_STRIKE)
+//		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_SPELL_STRIKE)
+//		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_SUMMON_PLANATAR_EVIL)
+//		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_SUMMON_PLANATAR_EVIL)
+//		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_SUMMON_PLANATAR_EVIL)
+//		Continue()
+//End
+
+//If he gets held, dispels it (hopefully) and re-applies buffs.
+
+IF
+	StateCheck(MySelf(), STATE_HELPLESS)
+Then
+	Response #100
+		ReallyForceSpell(MySelf(), INQUIS_DISPEL_MAGIC)
+		ReallyForceSpell(MySelf(), INQUIS_DISPEL_MAGIC)
+		ReallyForceSpell(MySelf(), INQUIS_DISPEL_MAGIC)
+		ReallyForceSpell(MySelf(), INQUIS_DISPEL_MAGIC)
+		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself(), WIZARD_BLUR)
+		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
+		ReallyForceSpell(Myself(), WIZARD_PROTECTION_FROM_ENERGY)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_TRAP)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_INVOCATION)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_DIVINATION)
+		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_ABJURATION)
+		ReallyForceSpell(Myself(), WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+End
+
+//Actual casting blocks. Defenses are first. Stoneskin down? Cast it!
+//Being attacked? Tensers it is.
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	GlobalTimerExpired("fighterCast","LOCALS")
+	CheckStatLT(Myself(), 2, STONESKINS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("fighterCast","LOCALS",6)
+		Spell(Myself(),WIZARD_STONE_SKIN)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MIRROR_IMAGE)
+	GlobalTimerExpired("fighterCast","LOCALS")
+	!StateCheck(Myself(),STATE_MIRRORIMAGE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("fighterCast","LOCALS",6)
+		Spell(Myself(),WIZARD_MIRROR_IMAGE)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("fighterCast","LOCALS")
+	HaveSpell(WIZARD_SPELL_IMMUNITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("fighterCast","LOCALS",6)
+		Spell(Myself(),WIZARD_SPELL_IMMUNITY_INVOCATION)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("fighterCast","LOCALS")
+	HaveSpell(WIZARD_TENSERS_TRANSFORMATION)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("fighterCast","LOCALS",6)
+		Spell(MySelf(), WIZARD_TENSERS_TRANSFORMATION)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+//And the usual, heal and run for it if you are near dead.
+
+IF 
+	HPPercentLT(MySelf(),20)	
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself()),50)	
+		UseItem("POTN55",Myself())
+		Wait(2)
+END
+	
+If
+	!ActuallyInCombat()
+	See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+End
+
+//Healing if you get fairly hurt.
+
+IF
+	HPPercentLT(MySelf(), 55)										
+	HasItem("POTN55",Myself())						
+THEN
+	RESPONSE #100
+		DisplayStringHead(MySelf(), @65)
+		UseItem("POTN55", MySelf())
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+		ReallyForceSpell(MySelf(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+END
+
+//Being a fighter/mage, Arimayus will only attack and apply spell buffs.
+
+IF	
+	HPGT(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),5)
+	!StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+THEN
+	RESPONSE #100
+		Attack(SecondNearestEnemyOf(Myself()))
+		Continue()
+END	
+
+IF	
+	HPGT(NearestEnemyOfType([0.0.0.MAGE_ALL]),5)
+	!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+If
+	See(NearestEnemyOf(Myself))
+then
+	response #100
+		AttackOneRound(LastSeenBy)
+		Continue()
+end

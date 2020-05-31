@@ -1,0 +1,209 @@
+If
+	true()
+then
+	response #100
+		ApplySpell(myself, WIZARD_INVISIBILITY)
+end
+//If this spawn is closed, let the area script know
+if
+	Dead("duMaia")
+	Dead("duAyrus")
+then
+	response #100
+		SetGlobal("duSpawnOneClosed", "GLOBAL", 1)
+		DestroySelf()
+end
+
+If
+	Global("duNumOfBanditSpawns", "GLOBAL", 10)
+Then
+	Response #100
+		SetGlobal("duNumOfBanditSpawns", "GLOBAL", 1)
+END
+
+If
+	or(2)
+		!Dead("duMaia")
+		!Dead("duAyrus")
+	OR(2)
+		Global("duNumOfBanditSpawns", "GLOBAL", 1)
+		Global("duNumOfBanditSpawns", "GLOBAL", 2)
+Then
+	Response #100
+		CreateCreature("dubnd1",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd8",[4994.1635], 0)					//Second sp Fighter/Mage
+		CreateCreature("dubnd5",[4994.1635], 0)					//Second sp Fighter/Thief
+		CreateCreature("dubnd6",[4994.1635], 0)					//Second sp Druid
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp mage
+		CreateCreature("dubnd3",[3713.1288], 0)					//Third sp cleric
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+		DestroySelf()
+
+	Response #50
+		CreateCreature("dubnd1",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd8",[4994.1635], 0)					//Second sp Fighter/Mage
+		CreateCreature("dubnd5",[4994.1635], 0)					//Second sp Fighter/Thief
+		CreateCreature("dubnd6",[4994.1635], 0)					//Second sp Druid
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+
+		CreateCreature("dubnd5",[3713.1288], 0)					//Third sp Fighter/Thief
+		CreateCreature("dubnd5",[3713.1288], 0)					//Third sp Fighter/Thief
+		CreateCreature("dubnd6",[3713.1288], 0)					//Third sp Barbarian
+		CreateCreature("dubnd3",[3713.1288], 0)					//Third sp cleric
+		DestroySelf()
+
+END
+
+If
+	or(2)
+		!Dead("duMaia")
+		!Dead("duAyrus")
+	OR(2)
+		Global("duNumOfBanditSpawns", "GLOBAL", 3)
+		Global("duNumOfBanditSpawns", "GLOBAL", 4)
+Then
+	Response #100
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp mage
+		CreateCreature("dubnd3",[3713.1288], 0)					//Third sp cleric
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+		CreateCreature("dubnd7",[3092.2027], 0)					//Fourth sp Druid
+		CreateCreature("dubnd7",[3092.2027], 0)					//Fourth sp Druid
+		CreateCreature("dubnd3",[3092.2027], 0)					//Fourth sp Cleric
+
+		DestroySelf()
+		
+	Response #50
+		CreateCreature("dubnd9",[3713.1288], 0)					//Third sp Demon
+		CreateCreature("dubnd9",[3713.1288], 0)					//Third sp Demon
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp Mage
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp Mage
+		CreateCreature("dubnd8",[3713.1288], 0)					//Third sp Fighter/Mage
+		CreateCreature("dubnd7",[3713.1288], 0)					//Third sp Druid
+
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd10",[3092.2027], 0)				//Fourth sp Demon
+		CreateCreature("dubnd3",[3092.2027], 0)					//Fourth sp Cleric
+		CreateCreature("dubnd11",[3092.2027], 0)				//Fourth sp Pit Lord
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+
+		DestroySelf()
+END
+
+If
+	or(2)
+		!Dead("duMaia")
+		!Dead("duAyrus")
+	OR(2)
+		Global("duNumOfBanditSpawns", "GLOBAL", 5)
+		Global("duNumOfBanditSpawns", "GLOBAL", 6)
+Then
+	Response #100
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp mage
+		CreateCreature("dubnd3",[3713.1288], 0)					//Third sp cleric
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+		CreateCreature("dubnd7",[3092.2027], 0)					//Fourth sp Druid
+		CreateCreature("dubnd7",[3092.2027], 0)					//Fourth sp Druid
+		CreateCreature("dubnd3",[3092.2027], 0)					//Fourth sp Cleric
+
+		DestroySelf()
+
+	response #50
+		CreateCreature("dubnd9",[3713.1288], 0)					//Third sp Demon
+		CreateCreature("dubnd9",[3713.1288], 0)					//Third sp Demon
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp Mage
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp Mage
+		CreateCreature("dubnd8",[3713.1288], 0)					//Third sp Fighter/Mage
+		CreateCreature("dubnd7",[3713.1288], 0)					//Third sp Druid
+
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd10",[3092.2027], 0)				//Fourth sp Demon
+		CreateCreature("dubnd3",[3092.2027], 0)					//Fourth sp Cleric
+		CreateCreature("dubnd11",[3092.2027], 0)				//Fourth sp Pit Lord
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+
+		DestroySelf()
+END
+
+
+If
+	or(2)
+		!Dead("duMaia")
+		!Dead("duAyrus")
+	OR(3)
+		Global("duNumOfBanditSpawns", "GLOBAL", 7)
+		Global("duNumOfBanditSpawns", "GLOBAL", 8)
+		Global("duNumOfBanditSpawns", "GLOBAL", 9)
+Then
+	Response #100
+
+		CreateCreature("dubnd1",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd8",[4994.1635], 0)					//Second sp Fighter/Mage
+		CreateCreature("dubnd5",[4994.1635], 0)					//Second sp Fighter/Thief
+		CreateCreature("dubnd6",[4994.1635], 0)					//Second sp Druid
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd1",[3713.1288], 0)					//Third sp Fighter
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp mage
+		CreateCreature("dubnd3",[3713.1288], 0)					//Third sp cleric
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+		CreateCreature("dubnd4",[3713.1288], 0)					//Third sp archer
+
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+		CreateCreature("dubnd7",[3092.2027], 0)					//Fourth sp Druid
+		CreateCreature("dubnd7",[3092.2027], 0)					//Fourth sp Druid
+		CreateCreature("dubnd3",[3092.2027], 0)					//Fourth sp Cleric
+
+		DestroySelf()
+
+	Response #50
+
+		CreateCreature("dubnd1",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd8",[4994.1635], 0)					//Second sp Fighter/Mage
+		CreateCreature("dubnd5",[4994.1635], 0)					//Second sp Fighter/Thief
+		CreateCreature("dubnd6",[4994.1635], 0)					//Second sp Druid
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+		CreateCreature("dubnd4",[4994.1635], 0)					//Second sp Fighter
+
+		CreateCreature("dubnd9",[3713.1288], 0)					//Third sp Demon
+		CreateCreature("dubnd9",[3713.1288], 0)					//Third sp Demon
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp Mage
+		CreateCreature("dubnd2",[3713.1288], 0)					//Third sp Mage
+		CreateCreature("dubnd8",[3713.1288], 0)					//Third sp Fighter/Mage
+		CreateCreature("dubnd7",[3713.1288], 0)					//Third sp Druid
+
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd9",[3092.2027], 0)					//Fourth sp Rakshasa
+		CreateCreature("dubnd10",[3092.2027], 0)				//Fourth sp Demon
+		CreateCreature("dubnd3",[3092.2027], 0)					//Fourth sp Cleric
+		CreateCreature("dubnd11",[3092.2027], 0)				//Fourth sp Pit Lord
+		CreateCreature("dubnd4",[3092.2027], 0)					//Fourth sp Archer
+
+		DestroySelf()
+END

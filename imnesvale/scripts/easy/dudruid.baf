@@ -1,0 +1,141 @@
+//Pathetic spell selection.
+
+If
+	Global("duDruidStart", "LOCALS", 0)
+Then
+	Response #100
+		SetGlobal("duDruidStart", "LOCALS", 1)
+		SetGlobal("duCastingTimer", "LOCALS", 6)
+		ReallyForceSpell(Myself(), CLERIC_IRONSKIN)
+		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
+		MoveToObject("dumayor")
+		Wait(6)		
+End
+
+if
+	!See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		MoveToObject("dumayor")
+		Wait(4)
+End
+
+IF
+	HaveSpell(CLERIC_SUMMON_FALLEN_DEVA)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,CLERIC_SUMMON_FALLEN_DEVA)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_IRONSKIN)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,CLERIC_IRONSKIN)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	OR(4)
+		CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+		CheckStatGT(LastSeenBy(Myself),2,STONESKINS)
+		CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+		CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CALL_LIGHTNING)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(LastSeenBy(Myself),CLERIC_CALL_LIGHTNING)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CALL_WOODLAND_BEINGS)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,CLERIC_CALL_WOODLAND_BEINGS)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_INSECT_PLAGUE)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),CLERIC_INSECT_PLAGUE)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CONJURE_ANIMALS)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,CLERIC_CONJURE_ANIMALS)
+		Continue()
+END
+
+IF
+	HPPercentLT(MySelf, 20)
+	HaveSpell(CLERIC_HEAL)
+Then
+	Response #100
+		RunAwayFrom(NearestEnemyOf(),50)
+		Spell(Myself,CLERIC_HEAL)
+END
+
+IF
+	HPPercentLT(MySelf(), 55)										
+	HasItem("POTN55",Myself())						
+THEN
+	RESPONSE #100
+		UseItem("POTN55", MySelf())								// Super Healing Potion
+		Attack(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+If
+	HPPercentLT(Myself,20)	
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(),50)	
+		UseItem("POTN55",MySelf())			
+		Wait(2)
+END
+
+If
+	!ActuallyInCombat()
+Then
+	Response #100
+		MoveToObject("dumayor")
+		Continue()
+End

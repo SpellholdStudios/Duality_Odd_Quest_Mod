@@ -1,0 +1,73 @@
+//See the archer script if you have any questions.
+
+IF
+	Global("duFighterMove", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("duFighterMove", "LOCALS", 1)
+		MoveToObject("dumayor")
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF 
+	HPPercentLT(Myself,20)		
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(MySelf()),50)	
+		UseItem("POTN55",Myself())			
+		Wait(2)
+END
+
+If
+	!ActuallyInCombat()
+	See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		AttackOneRound(LastSeenBy(Myself()))
+		Continue()
+End
+
+IF
+	HPPercentLT(MySelf(), 55)										
+	HasItem("POTN55",Myself())						
+THEN
+	RESPONSE #100
+		UseItem("POTN55", MySelf())
+		Attack(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF	
+	!StateCheck(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+	See(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]))
+THEN
+	RESPONSE #100
+		Attack(ThirdNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		Continue()
+END	
+
+IF	
+	!StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+	See(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
+THEN
+	RESPONSE #100
+		Attack(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]))
+		Continue()
+END	
+IF	
+	!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
+	See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		Continue()
+END
+
+If
+	See(NearestEnemyOf(Myself))
+then
+	response #100
+		Attack(LastSeenBy)
+		Continue()
+end

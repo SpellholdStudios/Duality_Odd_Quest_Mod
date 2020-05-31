@@ -1,0 +1,105 @@
+//Very similiar to Arimayus's script, puts up defensive spells
+//Dispels enemy if need be, but for the most part, just wails on you
+
+If
+	Global("duFighterMove", "LOCALS", 0)
+Then
+	Response #100
+		SetGlobal("duFighterMove", "LOCALS", 1)
+		SetGlobal("duCastingTimer", "LOCALS", 6)
+		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself(), WIZARD_BLUR)
+		MoveToObject("dumayor")
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+End
+
+If
+	See(NearestEnemyOf(Myself))
+then
+	response #100
+		AttackOneRound(LastSeenBy)
+		Continue()
+end
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	CheckStatLT(Myself(), 2, STONESKINS)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself(),WIZARD_STONE_SKIN)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MIRROR_IMAGE)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	!StateCheck(Myself(),STATE_MIRRORIMAGE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself(),WIZARD_MIRROR_IMAGE)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_BREACH)
+	See(NearestEnemyOf(MySelf()))
+	GlobalTimerExpired("casterCastTime","LOCALS")
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	CheckStatGT(NearestEnemyOf(MySelf()),2,STONESKINS)		
+THEN
+	RESPONSE #100
+		SetGlobalTimer("casterCastTime","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_BREACH)
+		Continue()
+END
+
+
+IF
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	HaveSpell(WIZARD_TENSERS_TRANSFORMATION)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(MySelf(), WIZARD_TENSERS_TRANSFORMATION)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END
+
+IF 
+	HPPercentLT(MySelf(),20)	
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself()),50)	
+		UseItem("POTN55",Myself())
+		Wait(2)
+END
+	
+If
+	!ActuallyInCombat()
+	See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+End
+
+// * Potion of Super Healing
+IF
+	HPPercentLT(MySelf(), 55)										
+	HasItem("POTN55",Myself())						
+THEN
+	RESPONSE #100
+		UseItem("POTN55",MySelf())
+		DisplayStringHead(MySelf(), @65)
+		ReallyForceSpell(MySelf(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+		AttackOneRound(NearestEnemyOf(Myself()))
+		Continue()
+END

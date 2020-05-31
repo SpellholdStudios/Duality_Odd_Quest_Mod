@@ -1,0 +1,308 @@
+//See Arimayus's script for most descriptions.
+//Only difference here is that, instead of attacking
+//spells are cast.
+//The spells are ordered by what I felt was most useful, with a small random component
+//to make sure the caster doesn't do the same thing over and over
+//The order is - Protections first, then dispelling enemy protections, then attack spells.
+
+If
+	Global("duCasterStart", "LOCALS", 0)
+Then
+	Response #100
+		SetGlobal("duCasterStart", "LOCALS", 1)
+		SetGlobal("duCastingTimer", "LOCALS", 6)
+		SetGlobal("duSpellTrigger", "LOCALS", 0)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself, WIZARD_BLUR)
+		MoveToObject("dumayor")
+		Wait(6)
+End
+
+if
+	!See(NearestEnemyOf(Myself))
+Then
+	Response #100
+		MoveToObject("dumayor")
+		Wait(4)
+End
+
+IF
+	RandomNum(5, 1)
+	Global("duSpellTrigger", "LOCALS", 0)
+	See(NearestEnemyOf(Myself))
+THEN
+	response #100
+		DisplayStringHead(Myself, @64)
+		SetGlobal("duSpellTrigger", "LOCALS", 1)
+		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_GREATER_MALISON)
+		ReallyForceSpell(NearestEnemyOf(Myself), CLERIC_DOOM)
+		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_POLYMORPH_OTHER)
+END
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	CheckStatLT(Myself, 2, STONESKINS)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,WIZARD_STONE_SKIN)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MIRROR_IMAGE)
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,WIZARD_MIRROR_IMAGE)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_GLOBE_OF_INVULNERABILITY)
+	RandomNum(2, 1)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_TELEPORT_FIELD)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(Myself))
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_TELEPORT_FIELD)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MORDENKAINENS_SWORD)
+	RandomNum(2, 1)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,WIZARD_MORDENKAINENS_SWORD)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_BREACH)
+	See(NearestEnemyOf(Myself))
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	OR(4)
+		StateCheck(NearestEnemyOf(Myself), STATE_MIRRORIMAGE)
+		StateCheck(NearestEnemyOf(Myself), STATE_BLUR)
+		CheckStatGT(NearestEnemyOf(Myself),2,STONESKINS)
+		CheckStatGT(NearestEnemyOf(Myself),0,IMPROVEDHASTE)
+		
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_BREACH)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_DETECT_INVISIBILITY)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	or(10)
+		StateCheck(NearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(SixthNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(NearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(FourthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(FifthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(SixthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,WIZARD_DETECT_INVISIBILITY)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_DISPEL_MAGIC)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	OR(4)
+		CheckStatGT(NearestEnemyOf(Myself),0,IMPROVEDHASTE)
+		CheckStatGT(NearestEnemyOf(Myself),2,STONESKINS)
+		CheckStatGT(NearestEnemyOf(Myself),0,SHIELDGLOBE)
+		CheckStatGT(NearestEnemyOf(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_IMPROVED_HASTE)
+	RandomNum(2, 1)
+	Allegiance(LastSeenBy(Myself), Ally)
+	!CheckStatGT(LastSeenBy(Myself),0,IMPROVEDHASTE)
+	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(LastSeenBy(Myself),WIZARD_IMPROVED_HASTE)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_WARDING_WHIP)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	OR(2)
+		CheckStatGT(NearestEnemyOf(Myself),0,SHIELDGLOBE)
+		CheckStatGT(NearestEnemyOf(Myself),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_WARDING_WHIP)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_WEB)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_WEB)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_DELAYED_BLAST_FIREBALL)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_DELAYED_BLAST_FIREBALL)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_CLOUDKILL)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_CLOUDKILL)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_FIREBALL)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_FIREBALL)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	!StateCheck(NearestEnemyOf(Myself),STATE_INVISIBLE)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)
+		Continue()
+END
+
+IF	
+	GlobalTimerNotExpired("duCastingTimer","LOCALS")
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_DEAD)
+	HPPercentGT(Myself, 40)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackOneRound(NearestEnemyOf(Myself))
+		Continue()
+END
+
+//Run like a baby if you get hurt
+IF 
+	HPPercentLT(Myself,30)		
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),50)	
+		UseItem("POTN55",Myself)			
+		Wait(2)
+END
+
+
+// * Potion of Super Healing
+IF
+	HasItem("POTN55",Myself)
+	HPPercentLT(Myself,50)
+Then
+	RESPONSE #100
+		UseItem("POTN55",Myself)
+		DisplayStringHead(Myself, @65)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself, WIZARD_MIRROR_IMAGE)
+END
+
+If
+	or(2)
+	!ActuallyInCombat()
+	ActionListEmpty()
+Then
+	Response #100
+		MoveToObject("dumayor")
+		Continue()
+End

@@ -1,0 +1,251 @@
+//See Arimayus's script for most descriptions.
+//Only difference here is that, instead of attacking
+//Ayrus casts.
+//The spells are ordered by what I felt was most useful, with a small random component
+//to make sure he doesn't do the same thing over and over
+//The order is - Protections first, then dispelling enemy protections, then attack spells.
+
+
+If
+	Global("duCasterStart", "LOCALS", 0)
+Then
+	Response #100
+		SetGlobal("duStartCreation", "locals", 0)
+		SetGlobal("duCasterStart", "LOCALS", 1)
+		SetGlobal("duCastingTimer", "LOCALS", 6)
+		SetGlobal("duSpellTrigger", "LOCALS", 0)
+		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself(), WIZARD_BLUR)
+		MoveToObject("dumayor")
+		Continue()
+End
+
+IF
+	RandomNum(5, 1)
+	Global("duSpellTrigger", "LOCALS", 0)
+	See(NearestEnemyOf(Myself))
+THEN
+	response #100
+		DisplayStringHead(Myself, @64)
+		SetGlobal("duSpellTrigger", "LOCALS", 1)
+		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_CHAOS)
+		ReallyForceSpell(NearestEnemyOf(Myself), WIZARD_DELAYED_BLAST_FIREBALL)
+END
+
+if
+	Global("duStartCreation", "locals", 0)
+	RandomNum(250, 1)
+then
+	response #99
+		SetGlobal("duStartCreation", "locals", 0)
+		GiveItemCreate("duFiIm", MySelf, 1, 0, 0)
+	response #100
+		SetGlobal("duStartCreation", "locals", 0)
+		GiveItemCreate("duMaIm", MySelf, 1, 0, 0)
+end
+
+IF
+	Global("duStartCreation", "locals", 0)
+then
+	response #100
+		SetGlobal("duStartCreation", "locals", 1)
+End
+
+IF
+	HaveSpell(WIZARD_GLOBE_OF_INVULNERABILITY)
+	RandomNum(2, 1)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(MySelf(), WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	CheckStatLT(MySelf(), 2, STONESKINS)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(MySelf(),WIZARD_STONE_SKIN)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_SUMMON_PLANATAR_EVIL)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(MySelf(),WIZARD_SUMMON_PLANATAR_EVIL)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_GREATER_MALISON)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_GREATER_MALISON)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_CHAOS)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_CHAOS)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_BREACH)
+	See(NearestEnemyOf(MySelf()))
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	OR(4)
+		StateCheck(NearestEnemyOf(MySelf()), STATE_MIRRORIMAGE)
+		StateCheck(NearestEnemyOf(MySelf()), STATE_BLUR)
+		CheckStatGT(NearestEnemyOf(MySelf()),2,STONESKINS)
+		CheckStatGT(NearestEnemyOf(MySelf()),0,IMPROVEDHASTE)
+		
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_BREACH)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_DISPEL_MAGIC)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+	OR(4)
+		StateCheck(NearestEnemyOf(Myself()),STATE_INVISIBLE)
+		CheckStatGT(NearestEnemyOf(MySelf()),0,IMPROVEDHASTE)
+		CheckStatGT(NearestEnemyOf(MySelf()),2,STONESKINS)
+		CheckStatGT(NearestEnemyOf(MySelf()),0,SHIELDGLOBE)
+		CheckStatGT(NearestEnemyOf(MySelf()),0,MINORGLOBE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_DISPEL_MAGIC)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_ABI_DALZIMS_HORRID_WILTING)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_FINGER_OF_DEATH)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_FINGER_OF_DEATH)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_DELAYED_BLAST_FIREBALL)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_DELAYED_BLAST_FIREBALL)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_INVISIBLE)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_MAGIC_MISSILE)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MELF_ACID_ARROW)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_INVISIBLE)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_MELF_ACID_ARROW)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_LIGHTNING_BOLT)
+	RandomNum(2, 1)
+	See(NearestEnemyOf(MySelf()))
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_DEAD)
+	!StateCheck(NearestEnemyOf(MySelf()),STATE_INVISIBLE)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(NearestEnemyOf(MySelf()),WIZARD_LIGHTNING_BOLT)
+		Continue()
+END
+
+//Run like a baby if you get hurt
+IF 
+	HPPercentLT(MySelf(),30)		
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(MySelf()),50)	
+		UseItem("POTN55",Myself())			
+		Wait(2)
+END
+
+
+// * Potion of Super Healing
+IF
+	HasItem("POTN55",MySelf())
+	HPPercentLT(MySelf(),50)
+Then
+	RESPONSE #100
+		UseItem("POTN55",MySelf())
+		DisplayStringHead(MySelf(), @65)
+		ReallyForceSpell(MySelf(), WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+END

@@ -1,0 +1,22 @@
+//Fairly simple, intro cut scene
+//Causes players to walk to a point, creates Jugend, and talks to him
+//Since dialog interrupts Cutscenes, the end of Jugend's dialog starts the next Cutscene
+
+IF
+	True()
+THEN
+	RESPONSE #100
+       	CutSceneID(Player1)
+		
+		ActionOverride(Player2,MoveToPoint([4375.3162]))
+		ActionOverride(Player3,MoveToPoint([4308.3226]))
+		ActionOverride(Player4,MoveToPoint([4384.3086]))
+		ActionOverride(Player5,MoveToPoint([4215.3232]))
+		ActionOverride(Player6,MoveToPoint([4364.3220]))
+		MoveViewPoint([4314.3177],VERY_FAST)
+		MoveToPoint([4314.3177])
+		Wait(3)
+		CreateCreatureDoor("dujug", [4216.3101], 0)
+		Wait(5)
+		ActionOverride("duJug", StartDialogNoSet(Player1))
+End
