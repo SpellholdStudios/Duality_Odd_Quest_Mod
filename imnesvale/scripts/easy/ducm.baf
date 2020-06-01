@@ -1,5 +1,5 @@
-//For the Spirit that will help a ranger.
-//I never bothered to write it.
+// For the Spirit that will help a ranger.
+// I never bothered to write it.
 
 IF 
 	HPPercentLT(Myself,20)

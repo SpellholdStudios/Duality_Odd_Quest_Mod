@@ -1,26 +1,26 @@
-//Pathetic spell selection.
+// Pathetic spell selection.
 
-If
-	Global("duDruidStart", "LOCALS", 0)
-Then
-	Response #100
-		SetGlobal("duDruidStart", "LOCALS", 1)
-		SetGlobal("duCastingTimer", "LOCALS", 6)
-		ReallyForceSpell(Myself(), CLERIC_IRONSKIN)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
-		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
+IF
+	Global("duDruidStart","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("duDruidStart","LOCALS",1)
+		SetGlobal("duCastingTimer","LOCALS",6)
+		ReallyForceSpell(Myself,CLERIC_IRONSKIN)
+		ReallyForceSpell(Myself,CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself,CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself,CLERIC_CHAOTIC_COMMANDS)
 		MoveToObject("dumayor")
 		Wait(6)		
-End
+END
 
-if
+IF
 	!See(NearestEnemyOf(Myself))
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		MoveToObject("dumayor")
 		Wait(4)
-End
+END
 
 IF
 	HaveSpell(CLERIC_SUMMON_FALLEN_DEVA)
@@ -44,7 +44,7 @@ END
 
 IF
 	HaveSpell(CLERIC_DISPEL_MAGIC)
-	See(NearestEnemyOf(MySelf()))
+	See(NearestEnemyOf(Myself))
 	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
 	GlobalTimerExpired("duCastingTimer","LOCALS")
 	OR(4)
@@ -61,7 +61,7 @@ END
 
 IF
 	HaveSpell(CLERIC_CALL_LIGHTNING)
-	See(NearestEnemyOf(MySelf()))
+	See(NearestEnemyOf(Myself))
 	!StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
 	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
 	GlobalTimerExpired("duCastingTimer","LOCALS")
@@ -84,13 +84,13 @@ END
 
 IF
 	HaveSpell(CLERIC_INSECT_PLAGUE)
-	See(NearestEnemyOf(MySelf()))
+	See(NearestEnemyOf(Myself))
 	!StateCheck(LastSeenBy(Myself),STATE_DEAD)
 	GlobalTimerExpired("duCastingTimer","LOCALS")
 THEN
 	RESPONSE #100
 		SetGlobalTimer("duCastingTimer","LOCALS",6)
-		Spell(NearestEnemyOf(MySelf()),CLERIC_INSECT_PLAGUE)
+		Spell(NearestEnemyOf(Myself),CLERIC_INSECT_PLAGUE)
 		Continue()
 END
 
@@ -105,37 +105,37 @@ THEN
 END
 
 IF
-	HPPercentLT(MySelf, 20)
+	HPPercentLT(Myself,20)
 	HaveSpell(CLERIC_HEAL)
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		RunAwayFrom(NearestEnemyOf(),50)
 		Spell(Myself,CLERIC_HEAL)
 END
 
 IF
-	HPPercentLT(MySelf(), 55)										
-	HasItem("POTN55",Myself())						
+	HPPercentLT(Myself,55)										
+	HasItem("POTN55",Myself)						
 THEN
 	RESPONSE #100
-		UseItem("POTN55", MySelf())								// Super Healing Potion
-		Attack(NearestEnemyOf(Myself()))
+		UseItem("POTN55",Myself)								// Super Healing Potion
+		Attack(NearestEnemyOf(Myself))
 		Continue()
 END
 
-If
+IF
 	HPPercentLT(Myself,20)	
 THEN
 	RESPONSE #100
 		RunAwayFrom(NearestEnemyOf(),50)	
-		UseItem("POTN55",MySelf())			
+		UseItem("POTN55",Myself)			
 		Wait(2)
 END
 
-If
+IF
 	!ActuallyInCombat()
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		MoveToObject("dumayor")
 		Continue()
-End
+END

@@ -12,7 +12,7 @@ THEN
 		MoveViewPoint([4314.3177],VERY_FAST)
 		MoveToPoint([4314.3177])
 		Wait(3)
-		CreateCreatureDoor("dujug", [4216.3101], 0)
+		CreateCreatureDoor("dujug",[4216.3101],0)
 		Wait(5)
-		ActionOverride("duJug", StartDialogNoSet(Player1))
-End
+		ActionOverride("duJug",StartDialogNoSet(Player1))
+END

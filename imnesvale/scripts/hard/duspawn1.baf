@@ -2,7 +2,7 @@ IF
 	OnCreation()
 THEN
 	RESPONSE #100
-		ApplySpell(myself,WIZARD_INVISIBILITY)
+		ApplySpell(Myself,WIZARD_INVISIBILITY)
 END
 // If this spawn is closed, let the area script know
 IF

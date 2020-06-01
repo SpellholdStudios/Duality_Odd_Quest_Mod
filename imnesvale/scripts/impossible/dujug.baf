@@ -1,169 +1,169 @@
-If
-	Global("duJugJustSpawned", "LOCALS", 0)
-Then
-	Response #100
-		SetGlobal("duJugJustSpawned", "LOCALS", 1)
-		SetGlobal("jugCastTimer", "LOCALS", 6)
-		SetGlobal("untriggered", "locals", 0)
-		SetGlobal("almostDead", "locals", 0)		
-		SetGlobal("duSpellTrigger", "LOCALS", 0)
-		ReallyForceSpell(Myself, WIZARD_IMPROVED_HASTE)
-		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
-		ReallyForceSpell(Myself(), WIZARD_BLUR)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
-		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
-		ReallyForceSpell(Myself(), WIZARD_PROTECTION_FROM_ENERGY)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_TRAP)
-		ReallyForceSpell(Myself, WIZARD_TENSERS_TRANSFORMATION)	
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_INVOCATION)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_DIVINATION)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_ABJURATION)
-		ReallyForceSpell(Myself(), WIZARD_GLOBE_OF_INVULNERABILITY)
-		Continue()
-End
-
 IF
-	HPPercentLT(MySelf(), 20)
-	Global("almostDead", "locals", 0)
+	Global("duJugJustSpawned","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("almostDead", "locals", 1)
-		DisplayStringHead(MySelf(), @67)
-		ReallyForceSpell(MySelf(), CLERIC_HEAL)
-		ReallyForceSpell(Myself, WIZARD_IMPROVED_HASTE)
-		ReallyForceSpell(Myself, WIZARD_TENSERS_TRANSFORMATION)	
-		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
-		ReallyForceSpell(Myself(), WIZARD_BLUR)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
-		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
-		ReallyForceSpell(Myself(), WIZARD_PROTECTION_FROM_ENERGY)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_TRAP)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_INVOCATION)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_DIVINATION)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_ABJURATION)
-		ReallyForceSpell(Myself(), WIZARD_GLOBE_OF_INVULNERABILITY)
-		ReallyForceSpell(MySelf(), WISH_RABBIT)
-		ReallyForceSpell(MySelf(), WISH_RABBIT)
-		Continue()
-End
-
-IF
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(MySelf()), 30)
-	See(SecondNearestEnemyOf(Myself))
-	Range(SecondNearestEnemyOf(MySelf()), 30)
-	See(ThirdNearestEnemyOf(Myself))
-	Range(ThirdNearestEnemyOf(MySelf()), 30)
-	Global("untriggered", "locals", 0)
-Then
-	Response #100
-		SetGlobal("untriggered", "locals", 1)
-		DisplayStringHead(MySelf(), @64)
-		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_SPELL_STRIKE)
-		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_SPELL_STRIKE)
-		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_SPELL_STRIKE)
-		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_FEEBLEMIND)
-		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_FEEBLEMIND)
-		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_FEEBLEMIND)
-		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_POLYMORPH_OTHER)
-		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_POLYMORPH_OTHER)
-		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_POLYMORPH_OTHER)
-		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_SPHERE_OF_CHAOS)
-		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_SPHERE_OF_CHAOS)
-		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_SPHERE_OF_CHAOS)
-		ReallyForceSpell(NearestEnemyOf(MySelf()), CLERIC_IMPLOSION)
-		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), CLERIC_IMPLOSION)
-		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), CLERIC_IMPLOSION)
-		Continue()
-End
-
-IF
-	StateCheck(MySelf(), STATE_HELPLESS)
-Then
-	Response #100
-		ReallyForceSpell(MySelf(), WIZARD_DISPEL_MAGIC)
-		ReallyForceSpell(MySelf(), WIZARD_DISPEL_MAGIC)
-		ReallyForceSpell(MySelf(), WIZARD_DISPEL_MAGIC)
-		ReallyForceSpell(MySelf(), WIZARD_DISPEL_MAGIC)
-		ReallyForceSpell(Myself(), WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
-		ReallyForceSpell(Myself(), WIZARD_BLUR)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_COLD)
-		ReallyForceSpell(Myself(), CLERIC_RESIST_FIRE)
-		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
-		ReallyForceSpell(Myself(), WIZARD_PROTECTION_FROM_ENERGY)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_TRAP)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_INVOCATION)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_DIVINATION)
-		ReallyForceSpell(Myself(), WIZARD_SPELL_IMMUNITY_ABJURATION)
-		ReallyForceSpell(Myself(), WIZARD_GLOBE_OF_INVULNERABILITY)
-		ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
-		ReallyForceSpell(NearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
-		ReallyForceSpell(SecondNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
-		ReallyForceSpell(ThirdNearestEnemyOf(MySelf()), WIZARD_ABI_DALZIMS_HORRID_WILTING)
-		Continue()
-End
-
-IF
-	HaveSpell(WIZARD_STONE_SKIN)
-	CheckStatLT(MySelf(), 2, STONESKINS)
-	GlobalTimerExpired("duCastingTimer","LOCALS")
-THEN
-	RESPONSE #100
-		SetGlobalTimer("duCastingTimer","LOCALS",6)
-		Spell(MySelf(),WIZARD_STONE_SKIN)
+		SetGlobal("duJugJustSpawned","LOCALS",1)
+		SetGlobal("jugCastTimer","LOCALS",6)
+		SetGlobal("untriggered","LOCALS",0)
+		SetGlobal("almostDead","LOCALS",0)		
+		SetGlobal("duSpellTrigger","LOCALS",0)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself,WIZARD_BLUR)
+		ReallyForceSpell(Myself,CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself,CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself,CLERIC_CHAOTIC_COMMANDS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_ENERGY)
+		ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+		ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)	
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_INVOCATION)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
 		Continue()
 END
 
 IF
-	RandomNum(5, 1)
-	Global("duSpellTrigger", "LOCALS", 0)
+	HPPercentLT(Myself,20)
+	Global("almostDead","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("almostDead","LOCALS",1)
+		DisplayStringHead(Myself,@67)
+		ReallyForceSpell(Myself,CLERIC_HEAL)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+		ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)	
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself,WIZARD_BLUR)
+		ReallyForceSpell(Myself,CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself,CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself,CLERIC_CHAOTIC_COMMANDS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_ENERGY)
+		ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_INVOCATION)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WISH_RABBIT)
+		ReallyForceSpell(Myself,WISH_RABBIT)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),30)
+	See(SecondNearestEnemyOf(Myself))
+	Range(SecondNearestEnemyOf(Myself),30)
+	See(ThirdNearestEnemyOf(Myself))
+	Range(ThirdNearestEnemyOf(Myself),30)
+	Global("untriggered","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("untriggered","LOCALS",1)
+		DisplayStringHead(Myself,@64)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_SPELL_STRIKE)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_SPELL_STRIKE)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_SPELL_STRIKE)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_FEEBLEMIND)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_FEEBLEMIND)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_FEEBLEMIND)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_SPHERE_OF_CHAOS)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_SPHERE_OF_CHAOS)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_SPHERE_OF_CHAOS)
+		ReallyForceSpell(NearestEnemyOf(Myself),CLERIC_IMPLOSION)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),CLERIC_IMPLOSION)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),CLERIC_IMPLOSION)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Myself,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Myself,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Myself,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself,WIZARD_BLUR)
+		ReallyForceSpell(Myself,CLERIC_RESIST_COLD)
+		ReallyForceSpell(Myself,CLERIC_RESIST_FIRE)
+		ReallyForceSpell(Myself,CLERIC_CHAOTIC_COMMANDS)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_ENERGY)
+		ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_INVOCATION)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)
+		ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	CheckStatLT(Myself,2,STONESKINS)
+	GlobalTimerExpired("duCastingTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("duCastingTimer","LOCALS",6)
+		Spell(Myself,WIZARD_STONE_SKIN)
+		Continue()
+END
+
+IF
+	RandomNum(5,1)
+	Global("duSpellTrigger","LOCALS",0)
 	See(NearestEnemyOf(Myself))
 THEN
-	response #100
-		DisplayStringHead(Myself, @64)
-		SetGlobal("duSpellTrigger", "LOCALS", 1)
-		ReallyForceSpell(Myself, WIZARD_TIME_STOP)
-		ReallyForceSpell(Myself, WIZARD_IMPROVED_ALUCRITY)
-		ReallyForceSpell(Myself, WIZARD_IMPROVED_HASTE)
+	RESPONSE #100
+		DisplayStringHead(Myself,@64)
+		SetGlobal("duSpellTrigger","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_TIME_STOP)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
 		Attack(NearestEnemyOf(Myself))
 END
 
 IF
 	HaveSpell(WIZARD_MIRROR_IMAGE)
-	!StateCheck(MySelf(),STATE_MIRRORIMAGE)
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
 	GlobalTimerExpired("duCastingTimer","LOCALS")
 THEN
 	RESPONSE #100
 		SetGlobalTimer("duCastingTimer","LOCALS",6)
-		Spell(MySelf(),WIZARD_MIRROR_IMAGE)
+		Spell(Myself,WIZARD_MIRROR_IMAGE)
 		Continue()
 END
 
 IF 
-	HPPercentLT(MySelf(),20)	
+	HPPercentLT(Myself,20)	
 THEN
 	RESPONSE #100
-		RunAwayFrom(NearestEnemyOf(Myself()),60)	
-		UseItem("POTN55",Myself())
+		RunAwayFrom(NearestEnemyOf(Myself),60)	
+		UseItem("POTN55",Myself)
 		Wait(2)
 END
 
 IF
-	HPPercentLT(MySelf(), 55)										
-	HasItem("POTN55",Myself())						
+	HPPercentLT(Myself,55)										
+	HasItem("POTN55",Myself)						
 THEN
 	RESPONSE #100
-		DisplayStringHead(MySelf(), @65)
-		UseItem("POTN55", MySelf())
-		AttackOneRound(NearestEnemyOf(Myself()))
+		DisplayStringHead(Myself,@65)
+		UseItem("POTN55",Myself)
+		AttackOneRound(NearestEnemyOf(Myself))
 		Continue()
-		ReallyForceSpell(MySelf(), WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself(), WIZARD_MIRROR_IMAGE)
+		ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
 END
 
 IF	
@@ -171,7 +171,7 @@ IF
 	!StateCheck(SecondNearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
 THEN
 	RESPONSE #100
-		Attack(SecondNearestEnemyOf(Myself()))
+		Attack(SecondNearestEnemyOf(Myself))
 		Continue()
 END	
 
@@ -180,14 +180,14 @@ IF
 	!StateCheck(NearestEnemyOfType([0.0.0.MAGE_ALL]),STATE_INVISIBLE)
 THEN
 	RESPONSE #100
-		Attack(NearestEnemyOf(Myself()))
+		Attack(NearestEnemyOf(Myself))
 		Continue()
 END
 
-If
+IF
 	See(NearestEnemyOf(Myself))
-then
-	response #100
+THEN
+	RESPONSE #100
 		Attack(LastSeenBy)
 		Continue()
-end
+END

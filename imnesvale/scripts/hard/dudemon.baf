@@ -1,50 +1,50 @@
-//Not in combat, go kill those goodie goodies!
+// Not in combat, go kill those goodie goodies!
 IF
-	Global("duDemonMove", "LOCALS", 0)
+	Global("duDemonMove","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("duDemonMove", "LOCALS", 1)
+		SetGlobal("duDemonMove","LOCALS",1)
 		MoveToObject("dumayor")
 		Continue()
 END
 
-if
+IF
 	See(NearestEnemyOf(Myself))
-	RandomNum(10, 1)
-then
-	response #100
-		ForceSpell(NearestEnemyOf(myself), DEMON_FEAR)
-end
+	RandomNum(10,1)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),DEMON_FEAR)
+END
 
-if
+IF
 	See(NearestEnemyOf(Myself))
-	RandomNum(15, 1)
-then
-	response #100
-		ForceSpell(NearestEnemyOf(myself), INQUIS_DISPEL_MAGIC)
-end
+	RandomNum(15,1)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),INQUIS_DISPEL_MAGIC)
+END
 
-if
+IF
 	See(NearestEnemyOf(Myself))
-	RandomNum(15, 1)
-then
-	response #100
-		ForceSpell(NearestEnemyOf(myself), WIZARD_HOLD_PERSON)
-end
+	RandomNum(15,1)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_HOLD_PERSON)
+END
 
-if
+IF
 	See(NearestEnemyOf(Myself))
-	RandomNum(50, 1)
-then
-	response #100
-		ForceSpell(NearestEnemyOf(myself), WIZARD_DELAYED_BLAST_FIREBALL)
-end
+	RandomNum(50,1)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_DELAYED_BLAST_FIREBALL)
+END
 
 
-If
+IF
 	See(NearestEnemyOf(Myself))
-then
-	response #100
+THEN
+	RESPONSE #100
 		Attack(LastSeenBy(Myself))
 		Continue()
-end
+END

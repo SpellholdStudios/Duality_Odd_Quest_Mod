@@ -1,48 +1,48 @@
-//Could use some work.
-//For now they hide before they get to you, they backstab someone
-//Then they just go about fighting.
+// Could use some work.
+// For now they hide before they get to you, they backstab someone
+// THEN they just go about fighting.
 
 IF
-	Global("fighterMove", "LOCALS", 0)
+	Global("fighterMove","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("fighterMove", "LOCALS", 1)
+		SetGlobal("fighterMove","LOCALS",1)
 		Hide()
 		MoveToObject("dumayor")
 		Continue()
 END
 
-If
-	See(NearestEnemyOf(MySelf()))
-	!Range(NearestEnemyOf(MySelf()), 30)
-	!StateCheck(Myself(),STATE_INVISIBLE)
-Then
-	Response #100
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),30)
+	!StateCheck(Myself,STATE_INVISIBLE)
+THEN
+	RESPONSE #100
 		Hide()
-    	SetGlobal("backstabTime", "LOCALS", 1)
-End
+    	SetGlobal("backstabTime","LOCALS",1)
+END
 
-If
-	StateCheck(Myself(),STATE_INVISIBLE)
-	See(NearestEnemyOf(MySelf()))
-	Range(NearestEnemyOf(MySelf()), 10)
-   	Global("backstabTime", "LOCALS", 1)
-Then
-	Response #100
-		AttackOneRound(NearestEnemyOf(MySelf()))
-    	SetGlobal("backstabTime", "LOCALS", 0)
+IF
+	StateCheck(Myself,STATE_INVISIBLE)
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),10)
+   	Global("backstabTime","LOCALS",1)
+THEN
+	RESPONSE #100
+		AttackOneRound(NearestEnemyOf(Myself))
+    	SetGlobal("backstabTime","LOCALS",0)
 		Continue()
-End
+END
 
-if
-	See(NearestEnemyOf(Myself()))
-	StateCheck(Myself(),STATE_INVISIBLE)
-	Range(NearestEnemyOf(MySelf()), 30)
-then
-	response #100
-		MoveToObject(NearestEnemyOf(Myself()))
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(Myself,STATE_INVISIBLE)
+	Range(NearestEnemyOf(Myself),30)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
 		Continue()
-End
+END
 
 IF 
 	HPPercentLT(Myself,20)
@@ -54,28 +54,28 @@ THEN
 END
 
 IF
-	HPPercentLT(MySelf(), 55)										
-	HasItem("POTN55",Myself())						
+	HPPercentLT(Myself,55)										
+	HasItem("POTN55",Myself)						
 THEN
 	RESPONSE #100
-		UseItem("POTN55", MySelf())
-		AttackOneRound(NearestEnemyOf(Myself()))
+		UseItem("POTN55",Myself)
+		AttackOneRound(NearestEnemyOf(Myself))
 		Continue()
 END
 
-If
+IF
 	!ActuallyInCombat()
 	See(NearestEnemyOf(Myself))
-Then
-	Response #100
-		AttackOneRound(NearestEnemyOf(Myself()))
+THEN
+	RESPONSE #100
+		AttackOneRound(NearestEnemyOf(Myself))
 		Continue()
-End
+END
 
-If
+IF
 	See(NearestEnemyOf(Myself))
-then
-	response #100
+THEN
+	RESPONSE #100
 		AttackOneRound(LastSeenBy)
 		Continue()
-end
+END

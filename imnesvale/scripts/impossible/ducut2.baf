@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 			CutSceneID(Player1)
-			ForceSpell("duJug", DRYAD_TELEPORT)
+			ForceSpell("duJug",DRYAD_TELEPORT)
 			Wait(3)
 			FadeToColor([20.0],0)
 			Wait(3)
@@ -13,8 +13,8 @@ THEN
 			ActionOverride(Player5,JumpToPoint([3595.2843]))
 			ActionOverride(Player6,JumpToPoint([3886.2762]))
 			JumpToPoint([3754.2801])
-			MoveViewPoint([3754.2801], INSTANT)
-			FadeFromColor([20.0], 0)
+			MoveViewPoint([3754.2801],INSTANT)
+			FadeFromColor([20.0],0)
 			Wait(2)
-			ActionOverride("duMayor", StartDialogNoSet(Player1))
-End
+			ActionOverride("duMayor",StartDialogNoSet(Player1))
+END

@@ -10,14 +10,14 @@
 //C is the town center
 //B is the bridge out of town
 
-//				4
-//			3	B	5
+// 		4
+// 	3	B	5
 //
 //	  |   |
 //    |   |
 //   /	S
 //	M
-//		  C
+//   C
 //	1			2
 
 /* Jugend appears, goes blah blah blah, leaves. Spawns start. If you kill both Maia and Ayrus spawns 1-3 shut down.
@@ -133,7 +133,7 @@ IF
 THEN
 	RESPONSE #100
 			Kill(Player1)
-			ActionOverride(Player1, DestroySelf())
+			ActionOverride(Player1,DestroySelf())
 END
 
 
@@ -172,21 +172,21 @@ THEN
 END
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-//If your a ranger you get some help, but only if I actually write the scripts and dialog for it.
+// If your a ranger you get some help, but only if I actually write the scripts and dialog for it.
 // Which isn't likely, being as I'm lazy.
 //
 //
-//		IF
-//			Global("RangerProtector","GLOBAL",1)
-//		THEN
-//			RESPONSE #100
-//				CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
-//				CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
-//				CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
-//				ChangeEnemyAlly("dudyrad",CONTROLLED)					
-//				ChangeEnemyAlly("duspirit",CONTROLLED)					
-//				ChangeEnemyAlly("duspirit",CONTROLLED)					
-//		END
+// IF
+// 	Global("RangerProtector","GLOBAL",1)
+// THEN
+// 	RESPONSE #100
+// 		CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
+// 		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+// 		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+// 		ChangeEnemyAlly("dudyrad",CONTROLLED)					
+// 		ChangeEnemyAlly("duspirit",CONTROLLED)					
+// 		ChangeEnemyAlly("duspirit",CONTROLLED)					
+// END
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
 	

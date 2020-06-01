@@ -1,12 +1,12 @@
-//See the archer script if you have any questions.
+// See the archer script if you have any questions.
 
 IF
-	Global("duFighterMove", "LOCALS", 0)
+	Global("duFighterMove","LOCALS",0)
 THEN
 	RESPONSE #100
-		SetGlobal("duFighterMove", "LOCALS", 1)
+		SetGlobal("duFighterMove","LOCALS",1)
 		MoveToObject("dumayor")
-		AttackOneRound(NearestEnemyOf(Myself()))
+		AttackOneRound(NearestEnemyOf(Myself))
 		Continue()
 END
 
@@ -14,27 +14,27 @@ IF
 	HPPercentLT(Myself,20)		
 THEN
 	RESPONSE #100
-		RunAwayFrom(NearestEnemyOf(MySelf()),50)	
-		UseItem("POTN55",Myself())			
+		RunAwayFrom(NearestEnemyOf(Myself),50)	
+		UseItem("POTN55",Myself)			
 		Wait(2)
 END
 
-If
+IF
 	!ActuallyInCombat()
 	See(NearestEnemyOf(Myself))
-Then
-	Response #100
-		AttackOneRound(LastSeenBy(Myself()))
-		Continue()
-End
-
-IF
-	HPPercentLT(MySelf(), 55)										
-	HasItem("POTN55",Myself())						
 THEN
 	RESPONSE #100
-		UseItem("POTN55", MySelf())
-		Attack(NearestEnemyOf(Myself()))
+		AttackOneRound(LastSeenBy(Myself))
+		Continue()
+END
+
+IF
+	HPPercentLT(Myself,55)										
+	HasItem("POTN55",Myself)						
+THEN
+	RESPONSE #100
+		UseItem("POTN55",Myself)
+		Attack(NearestEnemyOf(Myself))
 		Continue()
 END
 
@@ -64,10 +64,10 @@ THEN
 		Continue()
 END
 
-If
+IF
 	See(NearestEnemyOf(Myself))
-then
-	response #100
+THEN
+	RESPONSE #100
 		Attack(LastSeenBy)
 		Continue()
-end
+END

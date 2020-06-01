@@ -10,14 +10,14 @@
 //C is the town center
 //B is the bridge out of town
 
-//				3
-//			2	B	4
+// 		3
+// 	2	B	4
 //
 //	  |   |
 //    |   |
 //   /	S
 //	M
-//		  C
+//   C
 //	5			1
 
 /* Jugend appears, goes blah blah blah, leaves. Spawns start. If you kill both Maia and Ayrus spawns 2-4 shut down.
@@ -179,17 +179,17 @@ END
 // Which isn't likely, being as I'm lazy.
 //
 //
-//		IF
-//			Global("RangerProtector","GLOBAL",1)
-//		THEN
-//			RESPONSE #100
-//				CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
-//				CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
-//				CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
-//				ChangeEnemyAlly("dudyrad",CONTROLLED)					
-//				ChangeEnemyAlly("duspirit",CONTROLLED)					
-//				ChangeEnemyAlly("duspirit",CONTROLLED)					
-//		END
+// IF
+// 	Global("RangerProtector","GLOBAL",1)
+// THEN
+// 	RESPONSE #100
+// 		CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
+// 		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+// 		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+// 		ChangeEnemyAlly("dudyrad",CONTROLLED)					
+// 		ChangeEnemyAlly("duspirit",CONTROLLED)					
+// 		ChangeEnemyAlly("duspirit",CONTROLLED)					
+// END
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
 	
