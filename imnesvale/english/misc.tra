@@ -1,0 +1,136 @@
+
+/* ----------- *
+ *  Creatures  *
+ * ----------- */
+@101 = ~Fighter~
+@102 = ~Mage~
+@103 = ~Cleric~
+@104 = ~Archer~
+@105 = ~Fighter/Thief~
+@106 = ~Barbarian~
+@107 = ~Druid~
+@108 = ~Fighter/Mage~
+@109 = ~Rakshasa~
+@110 = ~Demon~
+@111 = ~Pit Demon~
+@112 = ~Arimayus~
+@113 = ~Maia~
+@114 = ~Jugend~
+@115 = ~Ayrus~
+@116 = ~Spirit of the Forest~
+@117 = ~Madulf~
+@118 = ~Minister Lloyd~
+@119 = ~Ogre~
+@120 = ~Minotaur~
+@121 = ~Gnoll~
+@122 = ~Orc~
+@123 = ~Mistress Eina~
+@124 = ~Protector of the Forest~
+@125 = ~Spawn1~
+@126 = ~Spawn2~
+
+/* ------- *
+ *  Items  *
+ * ------- */
+@201 = ~Ring~
+@202 = ~Ring of Amphetamines~
+@203 = ~It's a ring, what more do you need to know?~
+@204 = ~Ring of Amphetamines
+Vrooooooooommmmmmm!
+Makes you attack fast!
+
+STATISTICS:
+
+- Adds one extra 1/2 attack/round
+- Dexterity: +2 Bonus
+
+Unusuable by:
+ Wizard Slayer~
+
+@211 = ~Cloak~
+@212 = ~Mirror Mirror On The Wall~
+@213 = ~Who reads the unidentified descriptions anyway?~
+@214 = ~Mirror Mirror On The Wall
+
+STATISTICS:
+
+- Reflects all ranged attacks
+- AC Bonus: +1
+   
+Unusuable by:
+ Wizard Slayer~
+
+@221 = ~Robe~
+@222 = ~Battlemage's Robe~
+@223 = ~Identify it.~
+@224 = ~Battlemage's Robe
+
+STATISTICS:
+
+- AC Bonus: Sets base AC to 1
+- Increases casting speed by 2
+- Adds one extra 1/2 attack/round
+- 40% Crushing Resistance
+- Regenerates 1 HP per 3 seconds
+    
+- -10% Slashing Resistance
+- -25% Piercing Resistance
+-1 bonus to the number of Wizard Spells levels 1 - 6
+
+Usuable by:
+ Mage~
+
+@231 = ~Helm~
+@232 = ~Helm of Mortality~
+@233 = ~Ouch~
+@234 = ~Helm of Mortality
+This incredibly powerful helm bestows some impressive protections upon it's wearer.
+The drawback is that in order to protect it's wearer, the helm must draw on their vitality.
+
+STATISTICS:
+
+- Immunity to Timestop
+- Immunity to Imprisonment
+??    50% Magic Resistance
+    
+- -2 Max HP's EACH time equipped (effect is permanent)
+- -20 Max HP's while equipped
+- Sets constitution to 5~
+-ws-kensai
+
+@241 = ~Bracers~
+@242 = ~Hurry! Hurry!~
+@243 = ~What?~
+@244 = ~Hurry! Hurry!
+Oooohhh, nifty effect. Too bad you can't hit the broadside of a barn.
+
+STATISTICS:
+- Permanent Improved Haste
+- -5 Bonus to THACO
+    
+Unusuable by:
+    Wizard Slayer
+ Kensai~
+
+@251 = ~Fighters Peace~
+@252 = ~Fighters Peace
+If you found this item, feel special, it's VERY hard to get.
+If you cheated, get hit by a truck.
+
+STATISTICS:
+    Grants Protection from all Fighter classes. 
+- +4 AC Bonus
+    25% Piercing/Crushing/Slashing resistance.~
+ws
+
+@261 = ~Mages Peace~
+@262 = ~Mages Peace
+If you found this item, feel special, it's VERY hard to get.
+If you cheated, get hit by a truck.
+
+STATISTICS:
+- Grants Protection from all Mage classes. 
+- 80% Magic Resistance
+- Immunity to Timestop~
+ws
+

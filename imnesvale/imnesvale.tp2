@@ -19,12 +19,18 @@ ALWAYS
 			OUTER_SPRINT name_source ~bg2_chapter_%i%~
 			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
 		END
+
 	END
 
 END
 
 
-LANGUAGE ~English~ ~English~ ~imnesvale/english/imnes.tra~
+AUTO_TRA ~imnesvale/%s~
+
+LANGUAGE ~English~
+         ~english~
+		 ~imnesvale/english/setup.tra~
+		 ~imnesvale/english/misc.tra~
 
 
 /* ====================== *
@@ -41,7 +47,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  *  Imnesvale Mod : Hard  *
  * ====================== */
 BEGIN @2			// ~Hard~
-SUBCOMPONENT @0		// ~Install Imnesvale Mod~
+SUBCOMPONENT @0
 
 OUTER_SPRINT difficulty "hard"
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
@@ -51,7 +57,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  *  Imnesvale Mod : Are You Out Of Your Freaking Mind?!  *
  * ===================================================== */
 BEGIN @3			// ~Are You Out Of Your Freaking Mind?!~
-SUBCOMPONENT @0		// ~Install Imnesvale Mod~
+SUBCOMPONENT @0
 
 OUTER_SPRINT difficulty "impossible"
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~

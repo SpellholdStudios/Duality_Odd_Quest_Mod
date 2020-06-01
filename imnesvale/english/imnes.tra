@@ -1,3 +1,8 @@
+/* --------- *
+ *  Dialogs  *
+ * --------- */
+// dujug.d
+// -------
 @1  = ~Who are you? It matters not, I have come to conquer this miserable town. Just a short stop on my road to world conquest. Bow down before your new master and I may spare your wretched lives.~
 @2  = ~Um. Do you have any idea who we are? Or are you just another stupid megalomaniac? I'm guessing the latter.~
 @3  = ~Uh. Hi there.~
@@ -7,9 +12,9 @@
 @7  = ~Uh. What can we help you with?~
 @8  = ~You. Dare. To. Insult. Me?! Ha! I shall not sully my blade with the blood on one as wretched as you. Fall to my minions!~
 @9  = ~Oh get lost.~
-@10  = ~They all said I was insane, but I'll show them.... I will prove that my theory that our universe is nothing more then a grain of sand on an infinite beach! Oops. Wrong game. Um. Yeah, well, I'll just be leaving now.~
+@10  = ~They all said I was insane, but I'll show them... I will prove that my theory that our universe is nothing more then a grain of sand on an infinite beach! Oops. Wrong game. Um. Yeah, well, I'll just be leaving now.~
 @11 = ~I think I'm going to cry.~
-@12 = ~You wish my life story? Very well. Well, for starters I was born in..~
+@12 = ~You wish my life story? Very well. Well, for starters I was born in.~
 @13 = ~Actually, I didn't ask for your life story, I just asked what the hell your doing here. Just so I know whether or not to kill you.~
 @14 = ~Um. I hate to interrupt, but can we cut this short and get to the violent part?~
 @15 = ~Oh. But don't you want to hear the tragic story of my past?~
@@ -18,16 +23,25 @@
 @18 = ~Very well puny one. Pray to your gods before I crush you.~
 @19 = ~Right. Lets get violent!~
 @20 = ~Very well, it all began during the Time of Troubles when the gods walked the earth. As you may or may not know, the dead god Bhaal sired a number of children with mortals to aid in his resurrection. I am one of those children, my mother was a powerful mage in the service of one of Bhaals temples. When the time came for me to be sacrificed, my mother couldn't bear it, and spirited me away.~
-@21 = ~And I care..... why?~
+@21 = ~And I care... why?~
 @22 = ~Oh man, another of my siblings with moronic dreams of conquest, lets just go ahead and beat each other to a bloody pulp, it's what's going to happen anyway.~
 @23 = ~Silence mortal! Allow your betters to speak. Ahem. Now, as I was SAYing my mother spirited me away, but was badly injured in the attempt. She died not long after, leaving me, a small child, alone in this cruel cruel world.~
-@24 = ~Ok, I've had enough of this sob story. Time to die.~
+@24 = ~OK, I've had enough of this sob story. Time to die.~
 @25 = ~Please, go on, it sounds like you had a horrible childhood.~
 @26 = ~You dare to patronize me?!? Do you have any idea who you are messing with? Die impudent one!~
 @27 = ~Whoops, should have seen that one coming.~
 @28 = ~You have slain my son, now I shall deal with you personally, prepare to suffer an eternity of torment! Did that sound overly dramatic? I can't quite get my delivery down.~
 @29 = ~A little, the whole eternity thing was a bit overkill, but hey, who cares, we're going to butcher each other anyway.~
 @30 = ~Not at all, we did just chop your son into tiny weenie bits. And your next.~
+
+@44 = ~Cry? Hold on, I think I have a handkerchief here somewhere...~
+@45 = ~He rummages through a very large backpack...~
+@46 = ~Wait! You're trying to trick me! I don't own a handkerchief! Now my minions shall destroy you.~
+@47 = ~Can't I ever fight a SANE bad guy? I mean, is that too much to ask?~
+@48 = ~Wait, don't tell me you're another bunch of goody two shoes, always interfering with the grand plans of a poor Bhaalspawn like myself. Don't you people have ANYTHING better to do? Like helping old ladies across the street or something? Well, regardless, I'm taking over this town! And for once evil has a decent chance to win!~
+
+// dumayor.d
+// ---------
 @31 = ~Please, you must protect our poor village my <LADYLORD>! A evil mage has been taking over small villages to the north of here. He turns the populous into slaves for his ever-growing army! I shall stay here and organize our defenses. The others have already gathered inside the inn.~
 @32 = ~Of course good mayor, how could I do anything less? (Who writes this crappy dialog?)~
 @33 = ~I don't think so, you guys are on your own.~
@@ -38,15 +52,7 @@
 @38 = ~Pfagh. THEN I guess you don't stand a chance do you?~
 @39 = ~Very well. Then we accept our fates, and may the gods strike you down for what you have done. Prick.~
 @40 = ~Ha. I make my own fates, the gods desires notwithstanding.~
-@41 = ~Jugend draws power from one of his subordinates. He is fully healed!~
-@42 = ~Jugend tries to draw power from one of his subordinates, but you have slain both!~
-@43 = ~Awww, fuck. There goes the mayor.~
-@44 = ~Cry? Hold on, I think I have a handkerchief here somewhere...~
-@45 = ~He rummages through a very large backpack....~
-@46 = ~Wait! You're trying to trick me! I don't own a handkerchief! Now my minions shall destroy you.~
-@47 = ~Can't I ever fight a SANE bad guy? I mean, is that too much to ask?~
-@48 = ~Wait, don't tell me you're another bunch of goody two shoes, always interfering with the grand plans of a poor Bhaalspawn like myself. Don't you people have ANYTHING better to do? Like helping old ladies across the street or something? Well, regardless, I'm taking over this town! And for once evil has a decent chance to win!~
-@49 = ~Now my <LADYLORD> let me tell you what I have learned about our attackers......~
+
 @50 = ~They are led by a powerful mage called Jugend. He has two lieutenants, a mage named Ayrus and a mage called Maia. They each lead a section of his army. His son leads the third section. Beware his son, he is a powerful fighter and not to be trifled with.~
 @51 = ~Supposedly his army is almost without end, but in order for him to continue bringing in reinforcements, his two lieutenants and his son have to hold open portals.~
 @52 = ~By killing his son you will close the lower two portals, and by killing his lieutenants you will close the three upper portals.~
@@ -54,114 +60,56 @@
 @54 = ~Sure. I always love it when characters explain EXACTLY what I am supposed to do.~
 @55 = ~Nah. I actually like to figure some things out for myself. Mind you, after I die five or six times I'll choose the other option.~
 @56 = ~Also, those who you have aided in the past will come to aid you. Use them well. We have only a few minutes before they attack. And don't forget, DON'T LET ME DIE. Good luck. This peon will self-destruct in 5 seconds.~
-@57 = ~Uh. Yeah. Ok then.~
+@57 = ~Uh. Yeah. OK then.~
 @58 = ~Good luck then my <LADYLORD>, we only have a few minutes before they attack.~
-@59 = ~Ahhh!!~
-@60 = ~We have come to fulfill our part of the bargain. We will help protect the village. Tell us what to do.~
-@61 = ~Great. Thank you for your help Madulf.~
-@62 = ~Greetings protector of the forest. The spirits of the forest have come to aid you against the evil that threatens the land.~
-@63 = ~All help is appreciated. The coming fight will be extremely tough.~
-@64 = ~A spell trigger is fired!~
-@65 = ~A contingency is triggered!~
-@66 = ~No! You WILL die!~
-@67 = ~RABBITS?! That's the last time I EVER buy a near death contingency from the discount shop!~
 
-//Item desc.
-@68 = ~Ring~
-@69 = ~Ring of Amphetamines~
-@70 = ~It's a ring, what more do you need to know?~
-@71 = ~Ring of Amphetamines
-Vrooooooooommmmmmm!
-Makes you attack fast!
-
-STATISTICS:
-    Adds one extra 1/2 attack/round
-    Dexterity: +2 Bonus
-
-Unusuable by:
-    Wizard Slayer~
-@72 = ~Cloak~
-@73 = ~Mirror Mirror On The Wall~
-@74 = ~Who reads the unidentified descriptions anyway?~
-@75 = ~Mirror Mirror On The Wall
-
-STATISTICS:
-    Reflects all ranged attacks
-    AC Bonus: +1
-   
-Unusuable by:
-    Wizard Slayer~
-@76 = ~Robe~
-@77 = ~Battlemage's Robe~
-@78 = ~Identify it.~
-@79 = ~Battlemage's Robe
-
-STATISTICS:
-    AC Bonus: Sets base AC to 1
-    Increases casting speed by 2
-    Adds one extra 1/2 attack/round
-    40% Crushing Resistance
-    Regenerates 1 HP per 3 seconds
-    
-    -10% Slashing Resistance
-    -25% Piercing Resistance
-    -1 bonus to the number of Wizard Spells levels 1 - 6
-
-Usuable by:
-    Mages~
-@80 = ~Helm~
-@81 = ~Helm of Mortality~
-@82 = ~Ouch~
-@83 = ~Helm of Mortality
-This incredibly powerful helm bestows some impressive protections upon it's wearer.
-The drawback is that in order to protect it's wearer, the helm must draw on their vitality.
-
-STATISTICS:
-    Immunity to Timestop
-    Immunity to Imprisonment
-    50% Magic Resistance
-    
-    -2 Max HP's EACH time equiped (effect is permanent)
-    -20 Max HP's while equiped
-    Sets constitution to 5~
-@84 = ~Bracers~
-@85 = ~Hurry! Hurry!~
-@86 = ~What?~
-@87 = ~Hurry! Hurry!
-Oooohhh, nifty effect. Too bad you can't hit the broadside of a barn.
-
-STATISTICS:
-    Permanent Improved Haste
-    -5 Bonus to THACO
-    
-Unusuable by:
-    Wizard Slayer~
 @88 = ~Thank you my <LADYLORD>! You have saved our village once again. Please, take this as a small token of our thanks. My wife and I must now help the rest of our villagers.~
 @89 = ~Why do we always have to save EVERYONE? Oh. Right. Because it would be incredibly boring if we just walked around while someone else did all the work. That's like my real life.~
-@90 = ~Ring~
-@91 = ~Fighters Peace~
-@92 = ~Ring~
-@93 = ~Fighters Peace
-If you found this item, feel special, it's VERY hard to get.
-If you cheated, get hit by a truck.
 
-STATISTICS:
-    Grants Protection from all Fighter classes. 
-    +4 AC Bonus
-    25% Piercing/Crushing/Slashing resistance.~
-@94 = ~Ring~
-@95 = ~Mages Peace~
-@96 = ~Ring~
-@97 = ~Mages Peace
-If you found this item, feel special, it's VERY hard to get.
-If you cheated, get hit by a truck.
+// duwife.d
+// --------
+@59 = ~Ahhh!!~
 
-STATISTICS:
-    Grants Protection from all Mage classes. 
-    80% Magic Resistance
-    Immunity to Timestop~
-@98 = ~With your last blow Jugend falls. The town of Imnesvale will be safe once again. Hopefully, all the townsfolk survived unhurt.~
-@99 = ~It's over, when we have finished helping the survivors, we will return to our place north of the village.~
-@100 = ~Thank you for your help Madulf.~
 @101 = ~Once again, you have saved us, please, speak to my husband.~
 @102 = ~Very well, my lady.~
+
+// dumad.d
+// -------
+@60 = ~We have come to fulfill our part of the bargain. We will help protect the village. Tell us what to do.~
+@61 = ~Great. Thank you for your help Madulf.~
+
+@99 = ~It's over, when we have finished helping the survivors, we will return to our place north of the village.~
+@100 = ~Thank you for your help Madulf.~
+
+// dudyrad.d
+// ---------
+@62 = ~Greetings protector of the forest. The spirits of the forest have come to aid you against the evil that threatens the land.~
+@63 = ~All help is appreciated. The coming fight will be extremely tough.~
+
+// Seem to be unused
+// -----------------
+@41 = ~Jugend draws power from one of his subordinates. He is fully healed!~
+@42 = ~Jugend tries to draw power from one of his subordinates, but you have slain both!~
+@43 = ~Awww, fuck. There goes the mayor.~
+@49 = ~Now my <LADYLORD> let me tell you what I have learned about our attackers...~
+
+
+/* --------- *
+ *  Scripts  *
+ * --------- */
+// duar1100.baf
+// ------------
+@98 = ~With your last blow Jugend falls. The town of Imnesvale will be safe once again. Hopefully, all the townsfolk survived unhurt.~
+
+// duarim.baf, duayrus.baf, ducaster.baf, dufm.baf, dujug.baf, dumaia.baf, durak.baf
+// ---------------------------------------------------------------------------------
+@64 = ~A spell trigger is fired!~
+@65 = ~A contingency is triggered!~
+
+// duarim.baf
+// ----------
+@66 = ~No! You WILL die!~
+
+// dujug.baf
+// ---------
+@67 = ~RABBITS?! That's the last time I EVER buy a near death contingency from the discount shop!~

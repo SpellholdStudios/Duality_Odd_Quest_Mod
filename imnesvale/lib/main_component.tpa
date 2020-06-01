@@ -121,7 +121,6 @@ COPY ~%MOD_FOLDER%/items/during.itm~ ~override~
 	SAY NAME2 @202
 	SAY UNIDENTIFIED_DESC @203
 	SAY DESC @204
-//	SAY NAME1 @68	SAY NAME2 @69	SAY UNIDENTIFIED_DESC @70	SAY DESC @71
 
 // Cloak Mirror Mirror On The Wall
 COPY ~%MOD_FOLDER%/items/duclck.itm~ ~override~
@@ -129,7 +128,6 @@ COPY ~%MOD_FOLDER%/items/duclck.itm~ ~override~
 	SAY NAME2 @212
 	SAY UNIDENTIFIED_DESC @213
 	SAY DESC @214
-//	SAY NAME1 @72	SAY NAME2 @73	SAY UNIDENTIFIED_DESC @74	SAY DESC @75
 
 // Battlemage's Robe
 COPY ~%MOD_FOLDER%/items/durobe.itm~ ~override~
@@ -137,7 +135,6 @@ COPY ~%MOD_FOLDER%/items/durobe.itm~ ~override~
 	SAY NAME2 @222
 	SAY UNIDENTIFIED_DESC @223
 	SAY DESC @224
-//	SAY NAME1 @76	SAY NAME2 @77	SAY UNIDENTIFIED_DESC @78	SAY DESC @79
 
 // Helm of Mortality
 COPY ~%MOD_FOLDER%/items/duhelm.itm~ ~override~
@@ -145,7 +142,6 @@ COPY ~%MOD_FOLDER%/items/duhelm.itm~ ~override~
 	SAY NAME2 @232
 	SAY UNIDENTIFIED_DESC @233
 	SAY DESC @234
-//	SAY NAME1 @80	SAY NAME2 @81	SAY UNIDENTIFIED_DESC @82	SAY DESC @83
 
 // Bracers Hurry! Hurry!
 COPY ~%MOD_FOLDER%/items/dubrac.itm~ ~override~
@@ -153,7 +149,6 @@ COPY ~%MOD_FOLDER%/items/dubrac.itm~ ~override~
 	SAY NAME2 @242
 	SAY UNIDENTIFIED_DESC @243
 	SAY DESC @244
-//	SAY NAME1 @84	SAY NAME2 @85	SAY UNIDENTIFIED_DESC @86	SAY DESC @87
 
 // Ring Fighters Peace
 COPY ~%MOD_FOLDER%/items/dufiim.itm~ ~override~
@@ -161,7 +156,6 @@ COPY ~%MOD_FOLDER%/items/dufiim.itm~ ~override~
 	SAY NAME2 @251
 	SAY UNIDENTIFIED_DESC @201
 	SAY DESC @252
-//	SAY NAME1 @90	SAY NAME2 @91	SAY UNIDENTIFIED_DESC @92	SAY DESC @93
 
 // Ring Mages Peace
 COPY ~%MOD_FOLDER%/items/dumaim.itm~ ~override~
@@ -169,7 +163,6 @@ COPY ~%MOD_FOLDER%/items/dumaim.itm~ ~override~
 	SAY NAME2 @261
 	SAY UNIDENTIFIED_DESC @201
 	SAY DESC @262
-//	SAY NAME1 @94	SAY NAME2 @95	SAY UNIDENTIFIED_DESC @96	SAY DESC @97
 
 
 /* --------------------------------- *
@@ -177,7 +170,7 @@ COPY ~%MOD_FOLDER%/items/dumaim.itm~ ~override~
  * --------------------------------- */
 
 COMPILE ~%MOD_FOLDER%/dialogs/imnes.d~
-USING ~%MOD_FOLDER%/english/imnes.tra~ ~%MOD_FOLDER%/%s/imnes.tra~
+//USING ~%MOD_FOLDER%/english/imnes.tra~ ~%MOD_FOLDER%/%s/imnes.tra~
 
 // If you want to know why someone is doing something, check the "easy" scripts, they are commented
 COMPILE ~%MOD_FOLDER%/scripts/%difficulty%~
