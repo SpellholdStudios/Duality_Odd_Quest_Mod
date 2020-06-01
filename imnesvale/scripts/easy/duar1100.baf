@@ -1,14 +1,14 @@
 // From 7/8 on need variety!!!!!!!!
 // Assuming this isn't absurdly hard as it is.
 
-//Jugend only appears when his son is killed.
-//A horrible map but it will do.
-//1 - 5 are spawn points. 2 is guarded by Maia and 4 is guarded by Ayrus
-//1 is where Jugend's son, Arimayus is.
-//M is Madulf
-//S is your starting point
-//C is the town center
-//B is the bridge out of town
+// Jugend only appears when his son is killed.
+// A horrible map but it will do.
+// 1 - 5 are spawn points. 2 is guarded by Maia and 4 is guarded by Ayrus
+// 1 is where Jugend's son, Arimayus is.
+// M is Madulf
+// S is your starting point
+// C is the town center
+// B is the bridge out of town
 
 // 		3
 // 	2	B	4
@@ -26,7 +26,7 @@
    Oh yeah, only spawns IF you killed the shade lord.
 */
 IF
-	Global("Chapter","GLOBAL",6)
+	Global("Chapter","GLOBAL",%bg2_chapter_6%)
 	Global("duImnesInit","GLOBAL",0)
 	Global("ShadowLordDead","GLOBAL",1)
 THEN

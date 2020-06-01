@@ -1,6 +1,29 @@
 BACKUP ~imnesvale/backup~
 AUTHOR ~Duality (Dualities.Shadow@gmail.com)~
 
+ALWAYS
+
+	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter BEGIN // Always block must run only once per install!
+
+		// Determines which game is installed and if the game is an Enhanced Edition.
+		OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0						// eet
+
+		/* eet compatibility */
+		ACTION_IF (is_eet) BEGIN
+			OUTER_SET bg2_chapter = 12
+		END ELSE BEGIN
+			OUTER_SET bg2_chapter = 0
+		END
+		OUTER_FOR (i = 1 ; i <= 10 ; ++i) BEGIN
+			OUTER_SET bg2_chapter = bg2_chapter + 1
+			OUTER_SPRINT name_source ~bg2_chapter_%i%~
+			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+		END
+	END
+
+END
+
+
 LANGUAGE ~English~ ~English~ ~imnesvale/english/imnes.tra~
 
 
@@ -10,170 +33,8 @@ LANGUAGE ~English~ ~English~ ~imnesvale/english/imnes.tra~
 BEGIN @1			// ~Easy~
 SUBCOMPONENT @0		// ~Install Imnesvale Mod~
 
-//If you want to know why someone is doing something, check the "easy" scripts, the are commented
-
-//Critters.
-COPY ~imnesvale/creatures/dubnd1.cre~ ~override~
-	SAY NAME1 @101	// ~Fighter~
-	SAY NAME2 @101
-
-COPY ~imnesvale/creatures/dubnd2.cre~ ~override~
-	SAY  NAME1 @102	// ~Mage~
-	SAY  NAME2 @102
-
-COPY ~imnesvale/creatures/dubnd3.cre~ ~override~
-	SAY  NAME1 @103	// ~Cleric~
-	SAY  NAME2 @103
-
-COPY ~imnesvale/creatures/dubnd4.cre~ ~override~
-	SAY  NAME1 @104	// ~Archer~
-	SAY  NAME2 @104
-
-COPY ~imnesvale/creatures/dubnd5.cre~ ~override~
-	SAY  NAME1 @105	// ~Fighter-Thief~
-	SAY  NAME2 @105
-
-COPY ~imnesvale/creatures/dubnd6.cre~ ~override~
-	SAY  NAME1 @106	// ~Barbarian~
-	SAY  NAME2 @106
-
-COPY ~imnesvale/creatures/dubnd7.cre~ ~override~
-	SAY  NAME1 @107	// ~Druid~
-	SAY  NAME2 @107
-
-COPY ~imnesvale/creatures/dubnd8.cre~ ~override~
-	SAY  NAME1 @108	// ~Fighter-Mage~
-	SAY  NAME2 @108
-
-COPY ~imnesvale/creatures/dubnd9.cre~ ~override~
-	SAY  NAME1 @109	// ~Rakshasa~
-	SAY  NAME2 @109
-
-COPY ~imnesvale/creatures/dubnd10.cre~ ~override~
-	SAY  NAME1 @110	// ~Demon~
-	SAY  NAME2 @110
-
-COPY ~imnesvale/creatures/dubnd11.cre~ ~override~
-	SAY  NAME1 @111	// ~Pit Demon~
-	SAY  NAME2 @111
-
-COPY ~imnesvale/creatures/duarim.cre~ ~override~
-	SAY  NAME1 @112	// ~Arimayus~
-	SAY  NAME2 @112
-
-COPY ~imnesvale/creatures/dumaia.cre~ ~override~
-	SAY  NAME1 @113	// ~Maia~
-	SAY  NAME2 @113
-
-COPY ~imnesvale/creatures/dujug.cre~ ~override~
-	SAY  NAME1 @114	// ~Jugend~
-	SAY  NAME2 @114
-
-COPY ~imnesvale/creatures/duayrus.cre~ ~override~
-	SAY  NAME1 @115	// ~Ayrus~
-	SAY  NAME2 @115
-
-COPY ~imnesvale/creatures/dudyrad.cre~ ~override~
-	SAY  NAME1 @116	// ~Spirit of the Forest~
-	SAY  NAME2 @116
-
-COPY ~imnesvale/creatures/dumad.cre~ ~override~
-	SAY  NAME1 @177	// ~Madulf~
-	SAY  NAME2 @117
-
-COPY ~imnesvale/creatures/dumayor.cre~ ~override~
-	SAY  NAME1 @118	// ~Minister Lloyd~
-	SAY  NAME2 @118
-
-COPY ~imnesvale/creatures/duogre01.cre~ ~override~
-	SAY  NAME1 @119	// ~Ogre~
-	SAY  NAME2 @119
-
-COPY ~imnesvale/creatures/duogre02.cre~ ~override~
-	SAY  NAME1 @120	// ~Minotaur~
-	SAY  NAME2 @120
-
-COPY ~imnesvale/creatures/duogre03.cre~ ~override~
-	SAY  NAME1 @121	// ~Gnoll~
-	SAY  NAME2 @121
-
-COPY ~imnesvale/creatures/duogre04.cre~ ~override~
-	SAY  NAME1 @122	// ~Orc~
-	SAY  NAME2 @122
-
-COPY ~imnesvale/creatures/duwife.cre~ ~override~
-	SAY  NAME1 @123	// ~Mistress Eina~
-	SAY  NAME2 @123
-
-COPY ~imnesvale/creatures/duspirit.cre~ ~override~
-	SAY  NAME1 @124	// ~Protector of the Forest~
-	SAY  NAME2 @124
-
-COPY ~imnesvale/creatures/duspawn1.cre~ ~override~
-	SAY  NAME1 @125	// ~Spawn1~
-	SAY  NAME2 @125
-
-COPY ~imnesvale/creatures/duspawn2.cre~ ~override~
-	SAY  NAME1 @126	// ~Spawn2~
-	SAY  NAME2 @126
-
-// Items
-
-COPY ~imnesvale/items/during.itm~ ~override~
-	SAY  NAME1 @201
-	SAY  NAME2 @202
-	SAY  UNIDENTIFIED_DESC @203
-	SAY  DESC @204
-
-COPY ~imnesvale/items/duclck.itm~ ~override~
-	SAY  NAME1 @211
-	SAY  NAME2 @212
-	SAY  UNIDENTIFIED_DESC @213
-	SAY  DESC @214
-
-COPY ~imnesvale/items/durobe.itm~ ~override~
-	SAY  NAME1 @221
-	SAY  NAME2 @222
-	SAY  UNIDENTIFIED_DESC @223
-	SAY  DESC @224
-
-COPY ~imnesvale/items/duhelm.itm~ ~override~
-	SAY  NAME1 @231
-	SAY  NAME2 @232
-	SAY  UNIDENTIFIED_DESC @233
-	SAY  DESC @234
-
-COPY ~imnesvale/items/dubrac.itm~ ~override~
-	SAY  NAME1 @241
-	SAY  NAME2 @242
-	SAY  UNIDENTIFIED_DESC @243
-	SAY  DESC @244
-
-COPY ~imnesvale/items/dufiIm.itm~ ~override~
-	SAY  NAME1 @201
-	SAY  NAME2 @251
-	SAY  UNIDENTIFIED_DESC @201
-	SAY  DESC @252
-
-COPY ~imnesvale/items/dumaim.itm~ ~override~
-	SAY  NAME1 @201
-	SAY  NAME2 @261
-	SAY  UNIDENTIFIED_DESC @201
-	SAY  DESC @262
-
-
-//Scripts.
-
-COMPILE ~imnesvale/scripts/easy~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
-COMPILE ~imnesvale/dialogs/imnes.d~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
-
-EXTEND_TOP ~ar1100.bcs~ ~imnesvale/scripts/easy/duar1100.baf~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
+OUTER_SPRINT difficulty "easy"
+INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 
 
 /* ====================== *
@@ -182,162 +43,8 @@ USING ~imnesvale/english/imnes.tra~
 BEGIN @2			// ~Hard~
 SUBCOMPONENT @0		// ~Install Imnesvale Mod~
 
-COPY ~imnesvale/creatures/dubnd1.cre~ ~override~
-	SAY  NAME1 "Fighter"
-	SAY  NAME2 "Fighter"
-
-COPY ~imnesvale/creatures/dubnd2.cre~ ~override~
-	SAY  NAME1 "Mage"
-	SAY  NAME2 "Mage"
-
-COPY ~imnesvale/creatures/dubnd3.cre~ ~override~
-	SAY  NAME1 "Cleric"
-	SAY  NAME2 "Cleric"
-
-COPY ~imnesvale/creatures/dubnd4.cre~ ~override~
-	SAY  NAME1 "Archer"
-	SAY  NAME2 "Archer"
-
-COPY ~imnesvale/creatures/dubnd5.cre~ ~override~
-	SAY  NAME1 "Fighter/Thief"
-	SAY  NAME2 "Fighter/Thief"
-
-COPY ~imnesvale/creatures/dubnd6.cre~ ~override~
-	SAY  NAME1 "Barbarian"
-	SAY  NAME2 "Barbarian"
-
-COPY ~imnesvale/creatures/dubnd7.cre~ ~override~
-	SAY  NAME1 "Druid"
-	SAY  NAME2 "Druid"
-
-COPY ~imnesvale/creatures/dubnd8.cre~ ~override~
-	SAY  NAME1 "Fighter/Mage"
-	SAY  NAME2 "Fighter/Mage"
-
-COPY ~imnesvale/creatures/dubnd9.cre~ ~override~
-	SAY  NAME1 "Rakshasa"
-	SAY  NAME2 "Rakshasa"
-
-COPY ~imnesvale/creatures/dubnd10.cre~ ~override~
-	SAY  NAME1 "Demon"
-	SAY  NAME2 "Demon"
-
-COPY ~imnesvale/creatures/dubnd11.cre~ ~override~
-	SAY  NAME1 "Pit Demon"
-	SAY  NAME2 "Pit Demon"
-
-COPY ~imnesvale/creatures/duArim.cre~ ~override~
-	SAY  NAME1 "Arimayus"
-	SAY  NAME2 "Arimayus"
-
-COPY ~imnesvale/creatures/duMaia.cre~ ~override~
-	SAY  NAME1 "Maia"
-	SAY  NAME2 "Maia"
-
-COPY ~imnesvale/creatures/dujug.cre~ ~override~
-	SAY  NAME1 "Jugend"
-	SAY  NAME2 "Jugend"
-
-COPY ~imnesvale/creatures/duAyrus.cre~ ~override~
-	SAY  NAME1 "Ayrus"
-	SAY  NAME2 "Ayrus"
-
-COPY ~imnesvale/creatures/dudyrad.cre~ ~override~
-	SAY  NAME1 "Spirit of the Forest"
-	SAY  NAME2 "Spirit of the Forest"
-
-COPY ~imnesvale/creatures/dumad.cre~ ~override~
-	SAY  NAME1 "Madulf"
-	SAY  NAME2 "Madulf"
-
-COPY ~imnesvale/creatures/dumayor.cre~ ~override~
-	SAY  NAME1 "Minister Lloyd"
-	SAY  NAME2 "Minister Lloyd"
-
-COPY ~imnesvale/creatures/duogre01.cre~ ~override~
-	SAY  NAME1 "Ogre"
-	SAY  NAME2 "Ogre"
-
-COPY ~imnesvale/creatures/duogre02.cre~ ~override~
-	SAY  NAME1 "Minotaur"
-	SAY  NAME2 "Minotaur"
-
-COPY ~imnesvale/creatures/duogre03.cre~ ~override~
-	SAY  NAME1 "Gnoll"
-	SAY  NAME2 "Gnoll"
-
-COPY ~imnesvale/creatures/duogre04.cre~ ~override~
-	SAY  NAME1 "Orc"
-	SAY  NAME2 "Orc"
-
-COPY ~imnesvale/creatures/duwife.cre~ ~override~
-	SAY  NAME1 "Mistress Eina"
-	SAY  NAME2 "Mistress Eina"
-
-COPY ~imnesvale/creatures/duspirit.cre~ ~override~
-	SAY  NAME1 "Protector of the Forest"
-	SAY  NAME2 "Protector of the Forest"
-
-COPY ~imnesvale/creatures/duSpawn1.cre~ ~override~
-	SAY  NAME1 "Spawn1"
-	SAY  NAME2 "Spawn1"
-
-COPY ~imnesvale/creatures/duSpawn2.cre~ ~override~
-	SAY  NAME1 "Spawn1"
-	SAY  NAME2 "Spawn1"
-
-COPY ~imnesvale/items/duRing.itm~ ~override~
-	SAY  NAME1 @68
-	SAY  NAME2 @69
-	SAY  UNIDENTIFIED_DESC @70
-	SAY  DESC @71
-
-COPY ~imnesvale/items/duClck.itm~ ~override~
-	SAY  NAME1 @72
-	SAY  NAME2 @73
-	SAY  UNIDENTIFIED_DESC @74
-	SAY  DESC @75
-
-COPY ~imnesvale/items/duRobe.itm~ ~override~
-	SAY  NAME1 @76
-	SAY  NAME2 @77
-	SAY  UNIDENTIFIED_DESC @78
-	SAY  DESC @79
-
-COPY ~imnesvale/items/duHelm.itm~ ~override~
-	SAY  NAME1 @80
-	SAY  NAME2 @81
-	SAY  UNIDENTIFIED_DESC @82
-	SAY  DESC @83
-
-COPY ~imnesvale/items/duBrac.itm~ ~override~
-	SAY  NAME1 @84
-	SAY  NAME2 @85
-	SAY  UNIDENTIFIED_DESC @86
-	SAY  DESC @87
-
-COPY ~imnesvale/items/duFiIm.itm~ ~override~
-	SAY  NAME1 @90
-	SAY  NAME2 @91
-	SAY  UNIDENTIFIED_DESC @92
-	SAY  DESC @93
-
-COPY ~imnesvale/items/duMaIm.itm~ ~override~
-	SAY  NAME1 @94
-	SAY  NAME2 @95
-	SAY  UNIDENTIFIED_DESC @96
-	SAY  DESC @97
-
-COMPILE ~imnesvale/scripts/hard~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
-COMPILE ~imnesvale/dialogs/imnes.d~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
-
-EXTEND_TOP ~ar1100.bcs~			~imnesvale/scripts/hard/duar1100.baf~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
+OUTER_SPRINT difficulty "hard"
+INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 
 
 /* ===================================================== *
@@ -346,159 +53,5 @@ USING ~imnesvale/english/imnes.tra~
 BEGIN @3			// ~Are You Out Of Your Freaking Mind?!~
 SUBCOMPONENT @0		// ~Install Imnesvale Mod~
 
-COPY ~imnesvale/creatures/dubnd1.cre~ ~override~
-	SAY  NAME1 "Fighter"
-	SAY  NAME2 "Fighter"
-
-COPY ~imnesvale/creatures/dubnd2.cre~ ~override~
-	SAY  NAME1 "Mage"
-	SAY  NAME2 "Mage"
-
-COPY ~imnesvale/creatures/dubnd3.cre~ ~override~
-	SAY  NAME1 "Cleric"
-	SAY  NAME2 "Cleric"
-
-COPY ~imnesvale/creatures/dubnd4.cre~ ~override~
-	SAY  NAME1 "Archer"
-	SAY  NAME2 "Archer"
-
-COPY ~imnesvale/creatures/dubnd5.cre~ ~override~
-	SAY  NAME1 "Fighter/Thief"
-	SAY  NAME2 "Fighter/Thief"
-
-COPY ~imnesvale/creatures/dubnd6.cre~ ~override~
-	SAY  NAME1 "Barbarian"
-	SAY  NAME2 "Barbarian"
-
-COPY ~imnesvale/creatures/dubnd7.cre~ ~override~
-	SAY  NAME1 "Druid"
-	SAY  NAME2 "Druid"
-
-COPY ~imnesvale/creatures/dubnd8.cre~ ~override~
-	SAY  NAME1 "Fighter/Mage"
-	SAY  NAME2 "Fighter/Mage"
-
-COPY ~imnesvale/creatures/dubnd9.cre~ ~override~
-	SAY  NAME1 "Rakshasa"
-	SAY  NAME2 "Rakshasa"
-
-COPY ~imnesvale/creatures/dubnd10.cre~ ~override~
-	SAY  NAME1 "Demon"
-	SAY  NAME2 "Demon"
-
-COPY ~imnesvale/creatures/dubnd11.cre~ ~override~
-	SAY  NAME1 "Pit Demon"
-	SAY  NAME2 "Pit Demon"
-
-COPY ~imnesvale/creatures/duArim.cre~ ~override~
-	SAY  NAME1 "Arimayus"
-	SAY  NAME2 "Arimayus"
-
-COPY ~imnesvale/creatures/duMaia.cre~ ~override~
-	SAY  NAME1 "Maia"
-	SAY  NAME2 "Maia"
-
-COPY ~imnesvale/creatures/dujug.cre~ ~override~
-	SAY  NAME1 "Jugend"
-	SAY  NAME2 "Jugend"
-
-COPY ~imnesvale/creatures/duAyrus.cre~ ~override~
-	SAY  NAME1 "Ayrus"
-	SAY  NAME2 "Ayrus"
-
-COPY ~imnesvale/creatures/dudyrad.cre~ ~override~
-	SAY  NAME1 "Spirit of the Forest"
-	SAY  NAME2 "Spirit of the Forest"
-
-COPY ~imnesvale/creatures/dumad.cre~ ~override~
-	SAY  NAME1 "Madulf"
-	SAY  NAME2 "Madulf"
-
-COPY ~imnesvale/creatures/dumayor.cre~ ~override~
-	SAY  NAME1 "Minister Lloyd"
-	SAY  NAME2 "Minister Lloyd"
-
-COPY ~imnesvale/creatures/duogre01.cre~ ~override~
-	SAY  NAME1 "Ogre"
-	SAY  NAME2 "Ogre"
-
-COPY ~imnesvale/creatures/duogre02.cre~ ~override~
-	SAY  NAME1 "Minotaur"
-	SAY  NAME2 "Minotaur"
-
-COPY ~imnesvale/creatures/duogre03.cre~ ~override~
-	SAY  NAME1 "Gnoll"
-	SAY  NAME2 "Gnoll"
-
-COPY ~imnesvale/creatures/duogre04.cre~ ~override~
-	SAY  NAME1 "Orc"
-	SAY  NAME2 "Orc"
-
-COPY ~imnesvale/creatures/duwife.cre~ ~override~
-	SAY  NAME1 "Mistress Eina"
-	SAY  NAME2 "Mistress Eina"
-
-COPY ~imnesvale/creatures/duspirit.cre~ ~override~
-	SAY  NAME1 "Protector of the Forest"
-	SAY  NAME2 "Protector of the Forest"
-
-COPY ~imnesvale/creatures/duSpawn1.cre~ ~override~
-	SAY  NAME1 "Spawn1"
-	SAY  NAME2 "Spawn1"
-
-COPY ~imnesvale/creatures/duSpawn2.cre~ ~override~
-	SAY  NAME1 "Spawn1"
-	SAY  NAME2 "Spawn1"
-
-COPY ~imnesvale/items/duRing.itm~ ~override~
-	SAY  NAME1 @68
-	SAY  NAME2 @69
-	SAY  UNIDENTIFIED_DESC @70
-	SAY  DESC @71
-
-COPY ~imnesvale/items/duClck.itm~ ~override~
-	SAY  NAME1 @72
-	SAY  NAME2 @73
-	SAY  UNIDENTIFIED_DESC @74
-	SAY  DESC @75
-
-COPY ~imnesvale/items/duRobe.itm~ ~override~
-	SAY  NAME1 @76
-	SAY  NAME2 @77
-	SAY  UNIDENTIFIED_DESC @78
-	SAY  DESC @79
-
-COPY ~imnesvale/items/duHelm.itm~ ~override~
-	SAY  NAME1 @80
-	SAY  NAME2 @81
-	SAY  UNIDENTIFIED_DESC @82
-	SAY  DESC @83
-
-COPY ~imnesvale/items/duBrac.itm~ ~override~
-	SAY  NAME1 @84
-	SAY  NAME2 @85
-	SAY  UNIDENTIFIED_DESC @86
-	SAY  DESC @87
-
-COPY ~imnesvale/items/duFiIm.itm~ ~override~
-	SAY  NAME1 @90
-	SAY  NAME2 @91
-	SAY  UNIDENTIFIED_DESC @92
-	SAY  DESC @93
-
-COPY ~imnesvale/items/duMaIm.itm~ ~override~
-	SAY  NAME1 @94
-	SAY  NAME2 @95
-	SAY  UNIDENTIFIED_DESC @96
-	SAY  DESC @97
-
-COMPILE ~imnesvale/scripts/impossible~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
-COMPILE ~imnesvale/dialogs/imnes.d~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
-
-EXTEND_TOP ~ar1100.bcs~			~imnesvale/scripts/impossible/duar1100.baf~
-USING ~imnesvale/english/imnes.tra~
-		~imnesvale/%s/imnes.tra~
+OUTER_SPRINT difficulty "impossible"
+INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
