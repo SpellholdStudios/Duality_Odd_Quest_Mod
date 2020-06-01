@@ -1,5 +1,5 @@
-//From 7/8 on need variety!!!!!!!!
-//Assuming this isn't absurdly hard as it is.
+// From 7/8 on need variety!!!!!!!!
+// Assuming this isn't absurdly hard as it is.
 
 //Jugend only appears when his son is killed.
 //A horrible map but it will do.
@@ -20,173 +20,173 @@
 //		  C
 //	1			2
 
-//Jugend appears, goes blah blah blah, leaves. Spawns start. If you kill both Maia and Ayrus spawns 1-3 shut down.
-//If you kill duArim, Jugend appears, he can draw power from his two subordinates. I'm not even sure it's possible to kill him without killing the two, but I'm not sure. Need testing.
-//Mayor dies and you are forced to retreat.
-//Oh yeah, only spawns IF you killed the shade lord.
-
+/* Jugend appears, goes blah blah blah, leaves. Spawns start. If you kill both Maia and Ayrus spawns 1-3 shut down.
+  If you kill duArim, Jugend appears, he can draw power from his two subordinates. I'm not even sure it's possible to kill him without killing the two, but I'm not sure. Need testing.
+  Mayor dies and you are forced to retreat.
+  Oh yeah, only spawns IF you killed the shade lord.
+*/
 If
-	Global("Chapter", "GLOBAL", "6")
-	Global("duImnesInit", "GLOBAL", 0)
-	Global("ShadowLordDead", "GLOBAL", 1)
-Then
-	Response #100
+	Global("Chapter","GLOBAL",6)
+	Global("duImnesInit","GLOBAL",0)
+	Global("ShadowLordDead","GLOBAL",1)
+THEN
+	RESPONSE #100
 	
 		ClearAllActions() 
 		StartCutSceneMode() 
 		StartCutScene("ducut")
 
-		SetGlobal("duNotAlreadyClosed", "GLOBAL", 0)
-		SetGlobal("duJugSpawnForKilling", "GLOBAL", 0)
-		SetGlobal("duImnesInit", "GLOBAL", 1)
-		SetGlobal("duMadSpawned", "GLOBAL", 0)
+		SetGlobal("duNotAlreadyClosed","GLOBAL",0)
+		SetGlobal("duJugSpawnForKilling","GLOBAL",0)
+		SetGlobal("duImnesInit","GLOBAL",1)
+		SetGlobal("duMadSpawned","GLOBAL",0)
 	
-		ActionOverride("UHFarm01", DestroySelf())		//Remove extra actors
-		ActionOverride("UHFarm02", DestroySelf())		//They "move to the inn"
-		ActionOverride("UHFarm03", DestroySelf())		//For protection
-		ActionOverride("atta", DestroySelf())		//Yeah, right, thats it.
-		ActionOverride("UHFem02", DestroySelf())
-		ActionOverride("UHMan01", DestroySelf())
-		ActionOverride("UHMan02", DestroySelf())
-		ActionOverride("UHGirl01", DestroySelf())
-		ActionOverride("GEMFar01", DestroySelf())
-		ActionOverride("GEMJeb01", DestroySelf())
-		ActionOverride("GEMFar02", DestroySelf())
-		ActionOverride("Daar", DestroySelf())
-		ActionOverride("UHKid01", DestroySelf())
-		ActionOverride("UHKid02", DestroySelf())
-		ActionOverride("UHKid03", DestroySelf())
-		ActionOverride("madulf", DestroySelf())		//Gets rid of Madulf so we can put in the boosted versions
-		ActionOverride("UHOgre02", DestroySelf())
-		ActionOverride("UHOgre03", DestroySelf())
-		ActionOverride("UHOgre04", DestroySelf())
-		ActionOverride("UHOgre05", DestroySelf())
-		ActionOverride("UHFem01", DestroySelf())		//Destroys the old mayor and his wife to replace them with our slightly improved versions.
-		ActionOverride("UHMay01", DestroySelf())
+		ActionOverride("UHFarm01",DestroySelf())			// Remove extra actors
+		ActionOverride("UHFarm02",DestroySelf())			// They "move to the inn"
+		ActionOverride("UHFarm03",DestroySelf())			// For protection
+		ActionOverride("atta",DestroySelf())				// Yeah, right, thats it.
+		ActionOverride("UHFem02",DestroySelf())
+		ActionOverride("UHMan01",DestroySelf())
+		ActionOverride("UHMan02",DestroySelf())
+		ActionOverride("UHGirl01",DestroySelf())
+		ActionOverride("GEMFar01",DestroySelf())
+		ActionOverride("GEMJeb01",DestroySelf())
+		ActionOverride("GEMFar02",DestroySelf())
+		ActionOverride("Daar",DestroySelf())
+		ActionOverride("UHKid01",DestroySelf())
+		ActionOverride("UHKid02",DestroySelf())
+		ActionOverride("UHKid03",DestroySelf())
+		ActionOverride("madulf",DestroySelf())				// Gets rid of Madulf so we can put in the boosted versions
+		ActionOverride("UHOgre02",DestroySelf())
+		ActionOverride("UHOgre03",DestroySelf())
+		ActionOverride("UHOgre04",DestroySelf())
+		ActionOverride("UHOgre05",DestroySelf())
+		ActionOverride("UHFem01",DestroySelf())				// Destroys the old mayor and his wife to replace them with our slightly improved versions.
+		ActionOverride("UHMay01",DestroySelf())
 
 		
-		CreateCreature("dumayor", [3730.2765], 0)	//Mayor, Gotta protect this poor bastard
-		CreateCreature("duwife", [3681.2781], 0)	//Mayors wife
+		CreateCreature("dumayor",[3730.2765],0)				// Mayor, Gotta protect this poor bastard
+		CreateCreature("duwife",[3681.2781],0)				// Mayors wife
 
-		ActionOverride("UHMer01", JumpToPoint([3504.2846]))	//Moves the two merchants back a little
-		ActionOverride("UHMer02", JumpToPoint([3456.2835]))	//Keep them a little more out of harms way
+		ActionOverride("UHMer01",JumpToPoint([3504.2846]))	// Moves the two merchants back a little
+		ActionOverride("UHMer02",JumpToPoint([3456.2835]))	// Keep them a little more out of harms way
 
-		ChangeEnemyAlly("dumayor", Controlled)		//Gives you control of them. Also making them targets.
-		ChangeEnemyAlly("duwife", Controlled)
+		ChangeEnemyAlly("dumayor",CONTROLLED)				// Gives you control of them. Also making them targets.
+		ChangeEnemyAlly("duwife",CONTROLLED)
 
-//Spawns the three portal opening "bosses"		
-		CreateCreature("duayrus", [4312.1667], 0)				//Second in command, Ayrus
-		CreateCreature("dumaia", [3565.1683], 0)				//Third in command, Maia
-		CreateCreature("duarim", [4900.3300], 0)				//The Son, duArim
+// Spawns the three portal opening "bosses"		
+		CreateCreature("duayrus",[4312.1667],0)				// Second in command, Ayrus
+		CreateCreature("dumaia",[3565.1683],0)				// Third in command, Maia
+		CreateCreature("duarim",[4900.3300],0)				// The Son, duArim
 
-//Sets globals for the arrival of the waves of unpleasants
-		SetGlobalTimer("duNewBanditSpawn", "GLOBAL", 30)
-		SetGlobal("duNumOfBanditSpawns", "GLOBAL", 1)
-		SetGlobal("duSpawnOneClosed", "GLOBAL", 0)
-		SetGlobal("duSpawnTwoClosed", "GLOBAL", 0)
-End
+// Sets globals for the arrival of the waves of unpleasants
+		SetGlobalTimer("duNewBanditSpawn","GLOBAL",30)
+		SetGlobal("duNumOfBanditSpawns","GLOBAL",1)
+		SetGlobal("duSpawnOneClosed","GLOBAL",0)
+		SetGlobal("duSpawnTwoClosed","GLOBAL",0)
+END
 
-If
-	Global("orgealliance", "GLOBAL", 1)						//If you did the Madulf Side Quest
-	Global("duMadSpawned", "GLOBAL", 0)
-Then
-	Response #100
-		SetGlobal("duMadSpawned", "GLOBAL", 1)
-		CreateCreature("duMad", [3483.3051], 0)
-		CreateCreature("duOgre01", [3575.3168], 0)
-		CreateCreature("duOgre02", [3763.3117], 0)
-		CreateCreature("duOgre03", [3763.3030], 0)
-		CreateCreature("duOgre04", [3600.3100], 0)
-		ChangeEnemyAlly("duMad", Controlled)
-		ChangeEnemyAlly("duOgre01", Controlled)					//NOTE: These are boosted versions
-		ChangeEnemyAlly("duOgre02", Controlled)					
-		ChangeEnemyAlly("duOgre03", Controlled)					
-		ChangeEnemyAlly("duOgre04", Controlled)		
-End
+IF
+	Global("orgealliance","GLOBAL",1)						// If you did the Madulf Side Quest
+	Global("duMadSpawned","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("duMadSpawned","GLOBAL",1)
+		CreateCreature("duMad",[3483.3051],0)
+		CreateCreature("duOgre01",[3575.3168],0)
+		CreateCreature("duOgre02",[3763.3117],0)
+		CreateCreature("duOgre03",[3763.3030],0)
+		CreateCreature("duOgre04",[3600.3100],0)
+		ChangeEnemyAlly("duMad",CONTROLLED)
+		ChangeEnemyAlly("duOgre01",CONTROLLED)				// NOTE: These are boosted versions
+		ChangeEnemyAlly("duOgre02",CONTROLLED)					
+		ChangeEnemyAlly("duOgre03",CONTROLLED)					
+		ChangeEnemyAlly("duOgre04",CONTROLLED)		
+END
 
-//And we have a GO! I repeat, We have a GO!
-if
-	GlobalTimerExpired("duNewBanditSpawn", "GLOBAL")
-	or(2)
-		Global("duSpawnOneClosed", "GLOBAL", 0)
-		Global("duSpawnTwoClosed", "GLOBAL", 0)
+// And we have a GO! I repeat, We have a GO!
+IF
+	GlobalTimerExpired("duNewBanditSpawn","GLOBAL")
+	OR(2)
+		Global("duSpawnOneClosed","GLOBAL",0)
+		Global("duSpawnTwoClosed","GLOBAL",0)
 
-then
-	response #100
-		CreateCreatureObject("duSpawn1", Player1, 0, 0, 0)
-		CreateCreatureObject("duSpawn2", Player1, 0, 0, 0)
-		IncrementGlobal("duNumOfBanditSpawns", "GLOBAL", 1)
-		SetGlobalTimer("duNewBanditSpawn", "GLOBAL", 60)
-end
+THEN
+	RESPONSE #100
+		CreateCreatureObject("duSpawn1",Player1,0,0,0)
+		CreateCreatureObject("duSpawn2",Player1,0,0,0)
+		IncrementGlobal("duNumOfBanditSpawns","GLOBAL",1)
+		SetGlobalTimer("duNewBanditSpawn","GLOBAL",60)
+END
 
 
 
-//If either the mayor or his wife die, you are forced out of the area.
-//And everyone on the maps gets fried, and lots of hostiles get put in place
-//But only if I stop being lazy.
+// If either the mayor or his wife die, you are forced out of the area.
+// And everyone on the maps gets fried, and lots of hostiles get put in place
+// But only if I stop being lazy.
 
-If
-	or(3)
+IF
+	OR(3)
 		Dead("dumayor")
 		Dead("duwife")
-		Global("duBigFatJerk", "GLOBAL", 1)
-Then
-	Response #100
+		Global("duBigFatJerk","GLOBAL",1)
+THEN
+	RESPONSE #100
 			Kill(Player1)
 			ActionOverride(Player1, DestroySelf())
 END
 
 
-//Once you waste the Arimayus, Jugend shows up. Killing him closes both spawns
-If
+// Once you waste the Arimayus, Jugend shows up. Killing him closes both spawns
+IF
 	Dead("duArim")
-	Global("duJugSpawnForKilling", "GLOBAL", 0)
-Then
-	Response #100
-		SetGlobal("duJugSpawnForKilling", "GLOBAL", 1)
-		CreateCreatureObject("dujug", Player1, 0, 0, 0)   				//Boss Spawn
-		CreateCreatureObject("dubnd8", Player1, 0, 0, 0)					//Fighter/Mage
-		CreateCreatureObject("dubnd8", Player1, 0, 0, 0)					//Fighter/Mage
-		CreateCreatureObject("dubnd9", Player1, 0, 0, 0)					//Rakshasa
-		CreateCreatureObject("dubnd9", Player1, 0, 0, 0)					//Rakshasa
-		ActionOverride("duJug", StartDialogNoSet(Player1))		//Have that little initial chat, except it doesn't work.
-End
+	Global("duJugSpawnForKilling","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("duJugSpawnForKilling","GLOBAL",1)
+		CreateCreatureObject("dujug",Player1,0,0,0)   			// Boss Spawn
+		CreateCreatureObject("dubnd8",Player1,0,0,0)			// Fighter/Mage
+		CreateCreatureObject("dubnd8",Player1,0,0,0)			// Fighter/Mage
+		CreateCreatureObject("dubnd9",Player1,0,0,0)			// Rakshasa
+		CreateCreatureObject("dubnd9",Player1,0,0,0)			// Rakshasa
+		ActionOverride("duJug",StartDialogNoSet(Player1))		// Have that little initial chat, except it doesn't work.
+END
 
-If
+IF
 	Dead("duJug")
-	Global("duNotAlreadyClosed", "GLOBAL", 0)
-then
-	Response #100
-		ChangeEnemyAlly("duMad", Neutral)
-		ChangeEnemyAlly("duOgre01", Neutral)
-		ChangeEnemyAlly("duOgre02", Neutral)
-		ChangeEnemyAlly("duOgre03", Neutral)
-		ChangeEnemyAlly("duOgre04", Neutral)
+	Global("duNotAlreadyClosed","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly("duMad",NEUTRAL)
+		ChangeEnemyAlly("duOgre01",NEUTRAL)
+		ChangeEnemyAlly("duOgre02",NEUTRAL)
+		ChangeEnemyAlly("duOgre03",NEUTRAL)
+		ChangeEnemyAlly("duOgre04",NEUTRAL)
 
-		ChangeEnemyAlly("dumayor", Neutral)
-		ChangeEnemyAlly("duwife", Neutral)
-		SetGlobal("duNotAlreadyClosed", "GLOBAL", 1)
-		SetGlobal("duSpawnOneClosed", "GLOBAL", 1)
-		SetGlobal("duSpawnTwoClosed", "GLOBAL", 1)
-		DisplayStringHead(Player1, @98)
-end
+		ChangeEnemyAlly("dumayor",NEUTRAL)
+		ChangeEnemyAlly("duwife",NEUTRAL)
+		SetGlobal("duNotAlreadyClosed","GLOBAL",1)
+		SetGlobal("duSpawnOneClosed","GLOBAL",1)
+		SetGlobal("duSpawnTwoClosed","GLOBAL",1)
+		DisplayStringHead(Player1,@98)
+END
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-//If your a ranger you get some help, but only if I actually write the scripts and dialog for it.
-//Which isn't likely, being as I'm lazy.
+// If your a ranger you get some help, but only if I actually write the scripts and dialog for it.
+// Which isn't likely, being as I'm lazy.
 //
 //
-//		If
-//			Global("RangerProtector", "GLOBAL", 1)
-//		Then
-//			Response #100
-//				CreateCreature("dudyrad",[4905.3323], 0)					//Dyrad, Spirit of the Forest
-//				CreateCreature("duspirit",[4905.3323], 0)					//Protector of the Forest
-//				CreateCreature("duspirit",[4905.3323], 0)					//Protector of the Forest
-//				ChangeEnemyAlly("dudyrad", Controlled)					
-//				ChangeEnemyAlly("duspirit", Controlled)					
-//				ChangeEnemyAlly("duspirit", Controlled)					
-//		End
+//		IF
+//			Global("RangerProtector","GLOBAL",1)
+//		THEN
+//			RESPONSE #100
+//				CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
+//				CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+//				CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+//				ChangeEnemyAlly("dudyrad",CONTROLLED)					
+//				ChangeEnemyAlly("duspirit",CONTROLLED)					
+//				ChangeEnemyAlly("duspirit",CONTROLLED)					
+//		END
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
 	
