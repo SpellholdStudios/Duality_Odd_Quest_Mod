@@ -63,7 +63,7 @@ SAY @26
 IF ~~ THEN REPLY @27 DO ~StartCutSceneMode() StartCutScene("ducut2")~ EXIT
 END
 
-IF ~NumTimesTalkedTo(1)~ THEN BEGIN whoops
+IF ~Global("duJugSpawnForKilling","GLOBAL",1)~ THEN BEGIN whoops
 SAY @28
 IF ~~ THEN REPLY @29 EXIT
 IF ~~ THEN REPLY @30 EXIT
