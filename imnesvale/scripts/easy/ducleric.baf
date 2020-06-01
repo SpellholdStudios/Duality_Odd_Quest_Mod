@@ -1,9 +1,9 @@
-//Needs a better spell selection
+// Needs a better spell selection
 
-If
+IF
 	Global("duClericStart", "LOCALS", 0)
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		SetGlobal("duClericStart", "LOCALS", 1)
 		SetGlobal("duCastingTimer", "LOCALS", 18)
 		ReallyForceSpell(Myself(), CLERIC_IRONSKIN)
@@ -12,15 +12,15 @@ Then
 		ReallyForceSpell(Myself(), CLERIC_CHAOTIC_COMMANDS)
 		MoveToObject("dumayor")
 		Wait(6)
-End
+END
 
-if
+IF
 	!See(NearestEnemyOf(Myself))
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		MoveToObject("dumayor")
 		Wait(4)
-End
+END
 
 IF
 	HaveSpell(CLERIC_IRONSKIN)
@@ -56,12 +56,12 @@ THEN
 END
 
 IF
-	HaveSpell(CLERIC_SHIELD_OF_ARCHONS)
+	HaveSpell(CLERIC_SHIELD_OF_THE_ARCHONS)
 	See(NearestEnemyOf(Myself))
 	GlobalTimerExpired("duCastingTimer","LOCALS")
 THEN
 	RESPONSE #100
-		Spell(Myself,CLERIC_SHIELD_OF_ARCHONS)
+		Spell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)
 		Continue()
 END
 
@@ -194,14 +194,14 @@ THEN
 		Continue()
 END
 
-If
+IF
 	!ActuallyInCombat()
 	See(NearestEnemyOf(Myself))
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		AttackOneRound(NearestEnemyOf(Myself()))
 		Continue()
-End
+END
 
 IF 
 	HPPercentLT(Myself,20)	
@@ -212,10 +212,10 @@ THEN
 		Wait(2)
 END
 
-If
+IF
 	!ActuallyInCombat()
-Then
-	Response #100
+THEN
+	RESPONSE #100
 		MoveToObject("dumayor")
 		Continue()
-End
+END
