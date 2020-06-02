@@ -79,7 +79,7 @@ COPY ~%MOD_FOLDER%/creatures/dudyrad.cre~ ~override~
 
 // Madulf
 COPY ~%MOD_FOLDER%/creatures/dumad.cre~ ~override~
-	SAY NAME1 @177	SAY NAME2 @117
+	SAY NAME1 @117	SAY NAME2 @117
 
 // Minister Lloyd
 COPY ~%MOD_FOLDER%/creatures/dumayor.cre~ ~override~
@@ -189,5 +189,5 @@ COMPILE ~%MOD_FOLDER%/dialogs/imnes.d~
 COMPILE ~%MOD_FOLDER%/scripts/%difficulty%~
 	USING ~%MOD_FOLDER%/lang/%s/imnes.tra~
 
-EXTEND_TOP ~ar1100.bcs~ ~%MOD_FOLDER%/scripts/%difficulty%/duar1100.baf~ EVALUATE_BUFFER
+EXTEND_TOP ~ar1100.bcs~ ~%MOD_FOLDER%/scripts/%difficulty%/append/duar1100.baf~ EVALUATE_BUFFER
 	USING ~%MOD_FOLDER%/lang/%s/imnes.tra~
