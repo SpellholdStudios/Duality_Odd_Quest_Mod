@@ -17,7 +17,7 @@
 @113 = ~Maia~
 @114 = ~Jugend~
 @115 = ~Ayrus~
-@116 = ~Spirit of the Forest~
+@116 = ~Forest Spirit~
 @117 = ~Madulf~
 @118 = ~Minister Lloyd~
 @119 = ~Ogre~
@@ -41,10 +41,13 @@ Makes you attack fast!
 
 STATISTICS:
 
-- Adds one extra 1/2 attack/round
-- Dexterity: +2 Bonus
+Equipped abilities:
+- 1/2 additional attack per round
+- Dexterity: +2
 
-Unusuable by:
+Weight: 0
+
+Not usable by:
  Wizard Slayer~
 
 @211 = ~Cloak~
@@ -54,10 +57,13 @@ Unusuable by:
 
 STATISTICS:
 
+Equipped abilities:
 - Reflects all ranged attacks
-- AC Bonus: +1
-   
-Unusuable by:
+- Armor Class: +1
+
+Weight: 3
+
+Not usable by:
  Wizard Slayer~
 
 @221 = ~Robe~
@@ -67,17 +73,20 @@ Unusuable by:
 
 STATISTICS:
 
-- AC Bonus: Sets base AC to 1
-- Increases casting speed by 2
-- Adds one extra 1/2 attack/round
-- 40% Crushing Resistance
-- Regenerates 1 HP per 3 seconds
-    
-- -10% Slashing Resistance
-- -25% Piercing Resistance
--1 bonus to the number of Wizard Spells levels 1 - 6
+Equipped abilities:
+- Armor Class: 1
+- Increases Spell Casting Speed by 2
+- 1/2 additional attack per round
+- Crushing Resistance: +40%
+- Regenerate 1 Hit Point every 3 seconds
 
-Usuable by:
+- Slashing Resistance: -10%
+- Piercing Resistance: -25%
+- Memorize one less 1st-, 2nd-, 3rd, 4th, 5th and 6th-level wizard spell
+
+Weight: 4
+
+Usable by:
  Mage~
 
 @231 = ~Helm~
@@ -89,14 +98,20 @@ The drawback is that in order to protect it's wearer, the helm must draw on thei
 
 STATISTICS:
 
-- Immunity to Timestop
+Equipped abilities:
+- Immunity to Time Stop
 - Immunity to Imprisonment
-??    50% Magic Resistance
-    
-- -2 Max HP's EACH time equipped (effect is permanent)
-- -20 Max HP's while equipped
-- Sets constitution to 5~
--ws-kensai
+- Magic Resistance: +50%
+
+- Maximum Hit Points: -2 EACH time equipped (effect is permanent)
+- Maximum Hit Points: -20 while equipped
+- Constitution: set to 5
+
+Weight: 2
+
+Not usable by:
+ Wizard Slayer
+ Kensai~
 
 @241 = ~Bracers~
 @242 = ~Hurry! Hurry!~
@@ -105,11 +120,15 @@ STATISTICS:
 Oooohhh, nifty effect. Too bad you can't hit the broadside of a barn.
 
 STATISTICS:
+
+Equipped abilities:
 - Permanent Improved Haste
-- -5 Bonus to THACO
-    
-Unusuable by:
-    Wizard Slayer
+- THACO: -5 Bonus
+
+Weight: 2
+
+Not usable by:
+ Wizard Slayer
  Kensai~
 
 @251 = ~Fighters Peace~
@@ -118,10 +137,16 @@ If you found this item, feel special, it's VERY hard to get.
 If you cheated, get hit by a truck.
 
 STATISTICS:
-    Grants Protection from all Fighter classes. 
-- +4 AC Bonus
-    25% Piercing/Crushing/Slashing resistance.~
-ws
+
+Equipped abilities:
+- Grants Protection from all Fighter classes.
+- Armor Class: +4
+- Piercing, Crushing and Slashing Resistance: +25%
+
+Weight: 0
+
+Not usable by:
+ Wizard Slayer~
 
 @261 = ~Mages Peace~
 @262 = ~Mages Peace
@@ -129,8 +154,21 @@ If you found this item, feel special, it's VERY hard to get.
 If you cheated, get hit by a truck.
 
 STATISTICS:
-- Grants Protection from all Mage classes. 
-- 80% Magic Resistance
-- Immunity to Timestop~
-ws
+
+Equipped abilities:
+- Grants Protection from all Mage classes.
+- Magic Resistance: +80%
+- Immunity to Time Stop
+
+Weight: 0
+
+Not usable by:
+ Wizard Slayer~
+
+
+/* ================= *
+ *  Usability flags  *
+ * ================= */
+@9001 = ~[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+@9002 = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 
