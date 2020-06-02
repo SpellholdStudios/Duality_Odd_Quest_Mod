@@ -84,6 +84,11 @@ There are three difficulties:
 
 #### Special Acknowledgements to:
 
+- AL|EN: Wrote process which automatically provides Windows, Linux and Mac versions in the same archive file.
+- The BiG World Textpack German team: Provided German translation.
+- Prowler: Provided Russian translation.
+
+If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/">mod forum</a>.</br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -92,7 +97,7 @@ There are three difficulties:
 
 ## <a name="versions" id="versions"></a>Versions History
 
-##### Version 2.0.0 (May 31, 2020)
+##### Version 2.0.0 (June 2d, 2020)
 
 - TODO Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-imnesvale.tp2* -> *imnesvale.tp2* and moved it into mod top folder to support AL|EN's "Project Infinity".
@@ -100,7 +105,7 @@ There are three difficulties:
 - Added `VERSION` flag.
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
-- TODO Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
+- Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - TODO Added native BG2:EE and EET compatibility.
 - Included BWP Fixpack hotfixes:
@@ -110,10 +115,13 @@ There are three difficulties:
 	- duspawn1.baf and duspawn2.baf: replaced `true()` condition with `OnCreation()`.
 	- dumaim.itm: fixed wrong opcode #310 (Immunity to time stop) timing parameter (2-While equipped. Was set to 1).
 - TODO Added foreign languages WeiDU prompts whenever possible.
-- TODO Updated German and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
-- TODO Updated French and English translations (Gwendolyne).
+- Updated English, German and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
+- Added Russian translation by <a href=""http://www.shsforums.net/topic/32419-ds-odd-quest-mod/#entry474578">prowler</a>.
+- Added German translation (from the BiG World Textpack German project).
+- Items descriptions: Added missing weight and restriction flags.
 - Split unique imnes.tra file into separate thematic files for more comfortable readability.
 - TODO Updated, renamed readme file to *.txt* and moved it into new "*readme*" folder.
+- Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
 - Removed useless backup folder.
 - Lower cased files.
 - TODO Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
