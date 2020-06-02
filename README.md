@@ -41,10 +41,10 @@ The enemies range in level from 15 to 20 and have abilities to match. All enemie
 
 <details><summary><strong><ins>Minor SPOILER alert</ins></strong></summary>
 <br><p>
-Ayrus is wearing a ring that protects him from ALL fighter classes, grants slashing/crushing/piercing bonus and a decent AC bonus.</br>
-Maia is wearing a ring that protects her from ALL Mage classes and grants her high MR and immunity to Timestop.</br>
-You can obtain the aforementioned nifty rings. It is VERY hard however.</br>
-The Rakshasas have a very small chance of dropping one (and by small I mean 1 in 250)</br>
+###### Ayrus is wearing a ring that protects him from ALL fighter classes, grants slashing/crushing/piercing bonus and a decent AC bonus.</br>
+###### Maia is wearing a ring that protects her from ALL Mage classes and grants her high MR and immunity to Timestop.</br>
+###### You can obtain the aforementioned nifty rings. It is VERY hard however.</br>
+###### The Rakshasas have a very small chance of dropping one (and by small I mean 1 in 250)</br>
 </p>
 </details><br>
 
@@ -126,10 +126,8 @@ In addition to the methods above for removing individual components, you can com
 
 ## <a name="components" id="components"></a>Components
 
-## <a name="components" id="components"></a>Components
-
 The installer splits main component into three sub components, letting the player decide which difficulty level he/she wants to plays.  
-The number of each is the component DESIGNATED number which gives it a fixed install position and allows automated installers to specify component choices.<br /><br />
+The number of each is the component DESIGNATED number which gives it a fixed install position and allows automated installers to specify component choices.<br />
 
 ## 
 
@@ -236,15 +234,17 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ##### Version 2.0 (June 2d, 2020)
 
-- TODO Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
+- Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-imnesvale.tp2* -> *imnesvale.tp2* and moved it into mod top folder to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added `VERSION` flag.
+- Added `README` command.
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
 - Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Added native BG2:EE and EET compatibility.
+- Fixed a bug compiling duar1100.baf: now the file is ONLY appended to AR1100.bcs.
 - Included BWP Fixpack hotfixes:
 	- ducleric.baf (easy): <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry483047">Lollorian's PARSE ERROR fix</a> (replaced wrong spell id *CLERIC_SHIELD_OF_ARCHONS* with *CLERIC_SHIELD_OF_THE_ARCHONS*).
 	- duar1100.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-14#entry487571">Lollorian's typo fixes</a> (removed the quotes from `GLOBAL` values).
@@ -261,7 +261,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
 - Removed useless backup folder.
 - Lower cased files.
-- TODO Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
+- Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
 - Updated WeiDU installer to v246.
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
