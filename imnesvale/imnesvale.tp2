@@ -1,5 +1,9 @@
 BACKUP ~imnesvale/backup~
-AUTHOR ~Duality (Dualities.Shadow@gmail.com)~
+//AUTHOR ~Duality (Dualities.Shadow@gmail.com)~
+SUPPORT ~Spellhold Studios at http://www.shsforums.net/topic/32419-ds-odd-quest-mod/~
+
+VERSION ~v2.0~
+
 
 ALWAYS
 
@@ -37,7 +41,7 @@ LANGUAGE ~English~
  *  Imnesvale Mod : Easy  *
  * ====================== */
 BEGIN @1											// ~Easy~
-SUBCOMPONENT @0										// ~Install Imnesvale Mod~
+SUBCOMPONENT @0 LABEL ~imnesvale_easy~				// ~Install Imnesvale Mod~
 REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @4	// ~You must have ToB, BGT, BG2:EE or EET installed to install this mod.~
 
 OUTER_SPRINT difficulty "easy"
@@ -48,7 +52,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  *  Imnesvale Mod : Hard  *
  * ====================== */
 BEGIN @2			// ~Hard~
-SUBCOMPONENT @0
+SUBCOMPONENT @0 LABEL ~imnesvale_hard~
 REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @4
 
 OUTER_SPRINT difficulty "hard"
@@ -59,7 +63,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  *  Imnesvale Mod : Are You Out Of Your Freaking Mind?!  *
  * ===================================================== */
 BEGIN @3			// ~Are You Out Of Your Freaking Mind?!~
-SUBCOMPONENT @0
+SUBCOMPONENT @0 LABEL ~imnesvale_impossible~
 REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @4
 
 OUTER_SPRINT difficulty "impossible"

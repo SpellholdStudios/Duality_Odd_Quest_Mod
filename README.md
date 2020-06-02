@@ -12,8 +12,8 @@ Baldur's Gate Trilogy and EET<h3>
 
 
 **Original Author:** Duality  
-**Mod Website:** <a href="">Spellhold Studios</a>  
-**Mod Forum:** <a href="">Demon Summoning Ritual</a>  
+**Mod Website:** <a href="http://www.shsforums.net/forum/234-miscellaneous-released-mods/">Spellhold Studios</a>  
+**Mod Forum:** <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/">D's Odd Quest Mod</a>  
 
 
 [Read the mod's readme](http://spellholdstudios.github.io/readmes/imnesvale-readme.txt)
@@ -96,10 +96,10 @@ There are three difficulties:
 
 - TODO Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-imnesvale.tp2* -> *imnesvale.tp2* and moved it into mod top folder to support AL|EN's "Project Infinity".
-- TODO Replaced `AUTHOR` keyword with `SUPPORT`.
-- TODO Added `VERSION` flag.
+- Replaced `AUTHOR` keyword with `SUPPORT`.
+- Added `VERSION` flag.
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
-- TODO Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
+- Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
 - TODO Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - TODO Added native BG2:EE and EET compatibility.
