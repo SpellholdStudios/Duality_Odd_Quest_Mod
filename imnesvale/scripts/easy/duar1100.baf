@@ -111,7 +111,6 @@ IF
 	OR(2)
 		Global("duSpawnOneClosed","GLOBAL",0)
 		Global("duSpawnTwoClosed","GLOBAL",0)
-
 THEN
 	RESPONSE #100
 		CreateCreatureObject("duSpawn1",Player1,0,0,0)
@@ -179,17 +178,17 @@ END
 // Which isn't likely, being as I'm lazy.
 //
 //
-// IF
+//IF
 // 	Global("RangerProtector","GLOBAL",1)
-// THEN
-// 	RESPONSE #100
-// 		CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
-// 		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
-// 		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
-// 		ChangeEnemyAlly("dudyrad",CONTROLLED)					
-// 		ChangeEnemyAlly("duspirit",CONTROLLED)					
-// 		ChangeEnemyAlly("duspirit",CONTROLLED)					
-// END
+//THEN
+//	RESPONSE #100
+//		CreateCreature("dudyrad",[4905.3323],0)					// Dyrad, Spirit of the Forest
+//		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+//		CreateCreature("duspirit",[4905.3323],0)				// Protector of the Forest
+//		ChangeEnemyAlly("dudyrad",CONTROLLED)					
+//		ChangeEnemyAlly("duspirit",CONTROLLED)					
+//		ChangeEnemyAlly("duspirit",CONTROLLED)					
+//END
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////
 	
