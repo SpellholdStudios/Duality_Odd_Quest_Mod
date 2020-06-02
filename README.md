@@ -97,7 +97,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## <a name="versions" id="versions"></a>Versions History
 
-##### Version 2.0.0 (June 2d, 2020)
+##### Version 2.0 (June 2d, 2020)
 
 - TODO Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-imnesvale.tp2* -> *imnesvale.tp2* and moved it into mod top folder to support AL|EN's "Project Infinity".
@@ -107,16 +107,16 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
 - Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
-- TODO Added native BG2:EE and EET compatibility.
+- Added native BG2:EE and EET compatibility.
 - Included BWP Fixpack hotfixes:
 	- ducleric.baf (easy): <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-10#entry483047">Lollorian's PARSE ERROR fix</a> (replaced wrong spell id *CLERIC_SHIELD_OF_ARCHONS* with *CLERIC_SHIELD_OF_THE_ARCHONS*).
 	- duar1100.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/page-14#entry487571">Lollorian's typo fixes</a> (removed the quotes from `GLOBAL` values).
 	- imnes.d (dujug.d): <a href="http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-50#entry589068">micbaldur's fix for dialogue issue with Jugend after Arimayus is dead</a> (replaced State 1 Trigger `NumberOfTimesTalkedTo(1)` with `Global("duJugSpawnForKilling","GLOBAL",1)`).
 	- duspawn1.baf and duspawn2.baf: replaced `true()` condition with `OnCreation()`.
 	- dumaim.itm: fixed wrong opcode #310 (Immunity to time stop) timing parameter (2-While equipped. Was set to 1).
-- TODO Added foreign languages WeiDU prompts whenever possible.
+- Added foreign languages WeiDU prompts whenever possible.
 - Updated English, German and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
-- Added Russian translation by <a href=""http://www.shsforums.net/topic/32419-ds-odd-quest-mod/#entry474578">prowler</a>.
+- Added Russian translation by <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/#entry474578">prowler</a>.
 - Added German translation (from the BiG World Textpack German project).
 - Items descriptions: Added missing weight and restriction flags.
 - Split unique imnes.tra file into separate thematic files for more comfortable readability.

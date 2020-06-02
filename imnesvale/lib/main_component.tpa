@@ -2,6 +2,13 @@
  *         MAIN COMPONENT INSTALLATION         *
  * =========================================== */
 
+/* -------------------------------- *
+ *    Loads macros and functions    *
+ * -------------------------------- */
+
+INCLUDE ~%MOD_FOLDER%/lib/gw_functions.tpa~						// Loads macros and functions library dealing with specific EE items descriptions.
+
+
 /* ---------------------- *
  *  Installing creatures  *
  * ---------------------- */
@@ -120,49 +127,56 @@ COPY ~%MOD_FOLDER%/items/during.itm~ ~override~
 	SAY NAME1 @201
 	SAY NAME2 @202
 	SAY UNIDENTIFIED_DESC @203
-	SAY DESC @204
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@204" END
+BUT_ONLY
 
 // Cloak Mirror Mirror On The Wall
 COPY ~%MOD_FOLDER%/items/duclck.itm~ ~override~
 	SAY NAME1 @211
 	SAY NAME2 @212
 	SAY UNIDENTIFIED_DESC @213
-	SAY DESC @214
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@214" END
+BUT_ONLY
 
 // Battlemage's Robe
 COPY ~%MOD_FOLDER%/items/durobe.itm~ ~override~
 	SAY NAME1 @221
 	SAY NAME2 @222
 	SAY UNIDENTIFIED_DESC @223
-	SAY DESC @224
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@224" END
+BUT_ONLY
 
 // Helm of Mortality
 COPY ~%MOD_FOLDER%/items/duhelm.itm~ ~override~
 	SAY NAME1 @231
 	SAY NAME2 @232
 	SAY UNIDENTIFIED_DESC @233
-	SAY DESC @234
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@234" END
+BUT_ONLY
 
 // Bracers Hurry! Hurry!
 COPY ~%MOD_FOLDER%/items/dubrac.itm~ ~override~
 	SAY NAME1 @241
 	SAY NAME2 @242
 	SAY UNIDENTIFIED_DESC @243
-	SAY DESC @244
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@244" END
+BUT_ONLY
 
 // Ring Fighters Peace
 COPY ~%MOD_FOLDER%/items/dufiim.itm~ ~override~
 	SAY NAME1 @201
 	SAY NAME2 @251
 	SAY UNIDENTIFIED_DESC @201
-	SAY DESC @252
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@252" END
+BUT_ONLY
 
 // Ring Mages Peace
 COPY ~%MOD_FOLDER%/items/dumaim.itm~ ~override~
 	SAY NAME1 @201
 	SAY NAME2 @261
 	SAY UNIDENTIFIED_DESC @201
-	SAY DESC @262
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@262" END
+BUT_ONLY
 
 
 /* --------------------------------- *
@@ -173,7 +187,7 @@ COMPILE ~%MOD_FOLDER%/dialogs/imnes.d~
 
 // If you want to know why someone is doing something, check the "easy" scripts, they are commented
 COMPILE ~%MOD_FOLDER%/scripts/%difficulty%~
-USING ~%MOD_FOLDER%/lang/english/imnes.tra~ ~%MOD_FOLDER%/lang/%s/imnes.tra~
+	USING ~%MOD_FOLDER%/lang/%s/imnes.tra~
 
 EXTEND_TOP ~ar1100.bcs~ ~%MOD_FOLDER%/scripts/%difficulty%/duar1100.baf~ EVALUATE_BUFFER
-USING ~%MOD_FOLDER%/lang/english/imnes.tra~ ~%MOD_FOLDER%/lang/%s/imnes.tra~
+	USING ~%MOD_FOLDER%/lang/%s/imnes.tra~
