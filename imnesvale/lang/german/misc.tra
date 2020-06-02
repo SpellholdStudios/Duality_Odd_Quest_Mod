@@ -1,0 +1,171 @@
+
+/* ----------- *
+ *  Creatures  *
+ * ----------- */
+@101 = ~Kämpfer~
+@102 = ~Magier~
+@103 = ~Kleriker~
+@104 = ~Bogenschütze~
+@105 = ~Kämpfer/Dieb~
+@106 = ~Barbar~
+@107 = ~Druide~
+@108 = ~Kämpfer/Magier~
+@109 = ~Rakshasa~
+@110 = ~Dämon~
+@111 = ~Gruben-Dämonn~
+@112 = ~Arimayus~
+@113 = ~Maia~
+@114 = ~Jugend~
+@115 = ~Ayrus~
+@116 = ~Waldgeist~
+@117 = ~Madulf~
+@118 = ~Minister Lloyd~
+@119 = ~Oger~
+@120 = ~Minotaurus~
+@121 = ~Gnoll~
+@122 = ~Ork~
+@123 = ~Herrin Eina~
+@124 = ~Beschützer des Waldes~
+@125 = ~Ausgeburt 1~
+@126 = ~Ausgeburt 2~
+
+/* ------- *
+ *  Items  * Artikel desc.
+ * ------- */
+@201 = ~Ring~
+@202 = ~Ring der Amphetamine~
+@203 = ~Es ist ein Ring, was müsst Ihr mehr wissen?~
+@204 = ~Ring der Amphetaminen
+Wruuuuuuuuummmmmmm!
+Lässt Euch schneller angreifen!
+
+EIGENSCHAFTEN:
+
+ Fügt einen zusätzlichen 1/2 Angriff pro Runde hinzu
+ Geschicklichkeit: +2 Bonus
+
+Gewicht: 0
+
+Kann nicht verwendet werden von:
+ Magiertöter~
+
+@211 = ~Umhang~
+@212 = ~Spieglein Spieglein An Der Wand~
+@213 = ~Wer liest überhaupt die unidentifizierten Beschreibungen?~
+@214 = ~Spieglein Spieglein An Der Wand
+
+EIGENSCHAFTEN:
+
+ Wirft alle Angriffe mit Fernkampfwaffen zurück
+ Rüstungsklasse-Bonus: +1
+
+Gewicht: 3
+
+Kann nicht verwendet werden von:
+ Magiertöter~
+
+@221 = ~Robe~
+@222 = ~Die Robe der Kampfmagier~
+@223 = ~Identifiziert sie.~
+@224 = ~Die Robe der Kampfmagier
+
+EIGENSCHAFTEN:
+
+ Rüstungsklasse-Bonus: Setzt die Rüstungsklasse auf 1
+ Erhöht die Initiative beim Zaubern um 2
+ Fügt einen zusätzlichen 1/2 Angriff pro Runde hinzu
+ 40 % Widerstand gegen Zerschmettern
+ Stellt 1 Trefferpunkt alle 3 Sekunden wieder her
+
+ -10 % Widerstand gegen Aufschlitzen
+ -25 % Widerstand gegen Durchbohren
+ -1 Bonus zur Anzahl der Zauberersprüche der Stufen 1 - 6
+
+Gewicht: 4
+
+Kann nur verwendet werden von:
+ Magiern~
+
+@231 = ~Helm~
+@232 = ~Helm der Sterblichkeit~
+@233 = ~Aua~
+@234 = ~Helm der Sterblichkeit
+
+Dieser unglaublich starke Helm verleiht seinem Träger einen eindrucksvollen Schutz.
+Der Nachteil ist, dass der Helm, um seinen Träger zu schützen, sich seiner Lebenskraft bedienen muss.
+
+EIGENSCHAFTEN:
+
+ Immunität gegen Zeitstop
+ Immunität gegen Einkerkerung
+ 50 % Magiewiderstand
+
+ -2 Trefferpunkte JEDES Mal wenn er aufgesetzt wird (Wirkung ist dauerhaft)
+ -20 Trefferpunkte, während er getragen wird
+ Setzt die Konstitution auf 5
+
+Gewicht: 2
+
+Kann nicht verwendet werden von:
+ Magiertöter
+ Kensai~
+
+@241 = ~Armschienen~
+@242 = ~Beeilung! Beeilung!~
+@243 = ~Was?~
+@244 = ~Beeilung! Beeilung!
+
+Oooohhh, raffinierte Wirkung. Zu blöd, dass Ihr nicht die Breitseite einer Scheune treffen könnt.
+
+EIGENSCHAFTEN:
+
+ Dauerhafte Verbesserte Hast
+ -5 Bonus zu ETWO
+
+Gewicht: 2
+
+Kann nicht verwendet werden von:
+ Magiertöter
+ Kensai~
+
+@251 = ~Frieden der Kämpfer~
+@252 = ~Frieden der Kämpfer
+
+Wenn Ihr diesen Gegenstand gefunden habt, haltet Euch für außerordentlich, er ist SEHR schwer zu kommen.
+Wenn Ihr betrogen habt, sollt Ihr von einen Lastwagen überrollt werden.
+
+EIGENSCHAFTEN:
+
+ Gewährt Schutz vor allen Kämpfer-Klassen.
+ +4 Rüstungsklasse-Bonus
+ 25 % Widerstand gegen Durchbohren/Zertrümmern/Aufschlitzen.
+
+Gewicht: 0
+
+Kann nicht verwendet werden von:
+ Magiertöter~
+
+@261 = ~Frieden des Magiers~
+@262 = ~Frieden des Magiers
+
+Wenn Ihr diesen Gegenstand gefunden habt, haltet Euch für außerordentlich, er ist SEHR schwer zu kommen.
+Wenn Ihr betrogen habt, sollt Ihr von einen Lastwagen überrollt werden.
+
+EIGENSCHAFTEN:
+
+ Gewährt Schutz vor allen Magier-Klassen.
+ Magie-Widerstand von 80 %
+ Immunität gegen Zeitstop
+
+Gewicht: 0
+
+Kann nicht verwendet werden von:
+ Magiertöter~
+
+
+/* ================= *
+ *  Usability flags  *
+ * ================= */
+@9001 =~[Kk]ann[ %tab%]+[Nn]ur[ %tab%]+[Vv]erwendet[ %tab%]+[Ww]erden[ %tab%]+[Vv]on[ %tab%]*:~
+@9002 =~[Kk]ann[ %tab%]+[Nn]icht[ %tab%]+[Vv]erwendet[ %tab%]+[Ww]erden[ %tab%]+[Vv]on[ %tab%]*:~
+

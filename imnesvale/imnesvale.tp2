@@ -29,12 +29,22 @@ ALWAYS
 END
 
 
-AUTO_TRA ~imnesvale/%s~
+AUTO_TRA ~imnesvale/lang/%s~
 
 LANGUAGE ~English~
          ~english~
-		 ~imnesvale/english/setup.tra~
-		 ~imnesvale/english/misc.tra~
+		 ~imnesvale/lang/english/setup.tra~
+		 ~imnesvale/lang/english/misc.tra~
+
+LANGUAGE ~Deutsch (Uebersetzung von BiG World Textpack German project)~
+         ~german~
+		 ~imnesvale/lang/german/setup.tra~
+		 ~imnesvale/lang/german/misc.tra~
+
+LANGUAGE ~Russian (translation by prowler)~
+         ~english~
+		 ~imnesvale/lang/russian/setup.tra~
+		 ~imnesvale/lang/russian/misc.tra~
 
 
 /* ====================== *

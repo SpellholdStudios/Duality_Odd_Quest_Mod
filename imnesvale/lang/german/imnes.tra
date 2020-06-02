@@ -1,0 +1,115 @@
+/* --------- *
+ *  Dialogs  *
+ * --------- */
+// dujug.d
+// -------
+@1 = ~Wer seid Ihr? Es ist nicht von Bedeutung, ich bin gekommen, um diese jämmerliche Stadt zu erobern. Nur eine kurze Unterbrechung auf meinem Weg zur Welteroberung. Verbeugt Euch vor Eurem neuen Meister und ich verschone vielleicht Eure elenden Leben.~
+@2 = ~Ähm. Habt Ihr irgendeine Ahnung, wer wir sind? Oder seid Ihr nur ein anderer dummer Größenwahnsinniger? Ich tippe auf das Letztere.~
+@3 = ~Äh. Hallo dort.~
+@4 = ~Oh Gott, nicht noch einer. Ist etwas im Wasser, oder ziehe ich Wahnsinnige einfach  an?~
+@5 = ~Was? Der Wurm will mich ansprechen? Geht weiter, Armseliger.~ ~Was? Der Wurm will mich ansprechen? Geht weiter, Armselige.~
+@6 = ~Verdammt, warum, warum, warum, ich? Wollt Ihr friedlich weggehen, oder muss ich Euch den Schädel einschlagen?~
+@7 = ~Äh. Womit können wir Euch helfen?~
+@8 = ~Ihr wagt es, mich zu beleidigen. Mich?! Ha! Ich werde meine Klinge nicht mit dem Blut von jemand so elenden wie Euch besudeln. Fallt zu meinen Günstlingen!~
+@9 = ~Oh, haut ab!~
+@10 = ~Sie sagten alle, dass ich wahnsinnig sei, aber ich werde es ihnen zeigen.... Ich werde meine Theorie beweisen, dass unser Weltall nichts weiter ist als ein Sandkorn an einem unendlichen Strand! Uups. Falsches Spiel. Äm. Ja, also, ich werde Euch jetzt verlassen.~
+@11 = ~Ich denke, dass ich gleich weinen werde.~
+@12 = ~Ihr wollt meine Lebengeschichte? Sehr gut. Also, zunächst einmal wurde ich geboren in...~ 
+@13 = ~Tatsächlich bat ich nicht um Eure Lebengeschichte, ich fragte nur, was zum Teufel Ihr hier tut. Nur damit ich weiß, ob ich Euch töten soll oder nicht.~
+@14 = ~Äh. Ich hasse es, zu unterbrechen, aber können wir das abkürzen und zum gewalttätigen Teil kommen?~
+@15 = ~Oh. Aber wollt Ihr nicht die tragische Geschichte meiner Vergangenheit hören?~
+@16 = ~Nein, nicht wirklich. Ich bin werde Euch schließlich töten, was kümmert mich Eure tragische Vergangenheit?~
+@17 = ~*Seufz* Ich nehme es an. Es ist nicht so, dass ich nichts besser zu tun habe, wie zum Beispiel eine Elfen-Stadt vor einem psychotischen Wahnsinnigen, zu retten.~
+@18 = ~Sehr gut, Schwächling. Betet zu Euren Göttern, bevor ich Euch zerquetsche.~
+@19 = ~Genau. Lasst uns gewalttätig werden!~
+@20 = ~Sehr gut, es begann alles während der Zeit der Schwierigkeiten, als die Götter auf der Erde wandelten. Wie Ihr vielleicht wisst, zeugte der tote Gott Bhaal mehrere Kinder mit Sterblichen, um sein Wiederaufleben zu ermöglichen. Ich bin eines jener Kinder, meine Mutter war eine starke Magierin im Dienst in einem von Bhaals Tempeln. Als die Zeit für mich kam, geopfert zu werden, konnte meine Mutter es nicht verkraften, und zauberte mich weg.~
+@21 = ~Und ich sorge mich... warum?~
+@22 = ~Oh Mann, ein weiteres meiner Geschwister mit schwachsinnigen Träumen von Eroberung, lasst uns einfach weitergehen und einander zu blutigen Brei schlagen, es ist das, was sowieso geschehen wird.~
+@23 = ~Seid still, Sterblicher! Lasst die Leute über Euch sprechen. Hm! Nun, wie ich SAGTE, zauberte meine Mutter mich weg, aber sie wurde bei dem Versuch schlimm verletzt. Sie starb nicht lange danach und ließ mich, ein kleines Kind, allein in dieser grausamen grausamen Welt zurück.~ ~Seid still, Sterbliche! Lasst die Leute über Euch sprechen. Hm! Nun, wie ich SAGTE, zauberte meine Mutter mich weg, aber sie wurde bei dem Versuch schlimm verletzt. Sie starb nicht lange danach und ließ mich, ein kleines Kind, allein in dieser grausamen grausamen Welt zurück.~
+@24 = ~Nun gut, ich habe genug von dieser rührseligen Geschichte. Zeit, um zu sterben.~
+@25 = ~Bitte geht weiter, es scheint, dass Ihr eine schreckliche Kindheit hattet.~
+@26 = ~Ihr wagt es, mich herablassend zu behandeln?!? Habt Ihr irgendeine Ahnung, mit wem Ihr Euch anlegt? Sterbt, Ihr Unverschämter!~ ~Ihr wagt es, mich herablassend zu behandeln?!? Habt Ihr irgendeine Ahnung, mit wem Ihr Euch anlegt? Sterbt, Ihr Unverschämte!~
+@27 = ~Hoppla, ich hätte das kommen sehen sollen.~
+@28 = ~Ihr habt meinen Sohn ermordet, jetzt werde ich mich persönlich mit Euch befassen, bereitet Euch darauf vor, eine Ewigkeit an Qualen zu ertragen! Klang das allzu dramatisch? Ich kann mich nicht ganz von meiner Geburt freimachen.~
+@29 = ~Ein wenig, das ganze Ewigkeitsding war ein wenig zu viel des Guten, aber he, wen kümmert's, wir werden einander ohnehin abschlachten.~
+@30 = ~Überhaupt nicht, wir hackten gerade Euren Sohn in winzig kleine Stückchen. Und Euch als nächstes.~
+
+@44 = ~Weinen? Wartet, ich denke, dass ich hier irgendwo ein Taschentuch habe...~ 
+@45 = ~Er durchstöbert einen sehr großen Rucksack...~
+@46 = ~Wartet! Ihr versucht, mich zu beschwindeln! Ich besitze kein Taschentuch! Jetzt sollen meine Günstlinge Euch vernichten.~
+@47 = ~Könnte ich jemals mit einem ZURECHNUNGSFÄHIGEN Bösewicht kämpfen? Ich meine, ist das zu viel verlangt?~
+@48 = ~Wartet, sagt mir nicht, dass Ihr ein anderer Haufen Gutmenschen seid, die immer die großartigen Pläne eines schlechten Bhaalsprosses wie mir stören. Habt Ihr Leute nicht IRGENDETWAS besseres zu tun? Wie alten Damen helfen, über die Straße zu gehen oder etwas in der Art? Nun, trotzdem übernehme ich diese Stadt! Und diesmal hat das Böse eine anständige Chance zu gewinnen!~
+
+// dumayor.d
+// ---------
+@31 = ~Bitte, Ihr müsst unser armes Dorf schützen, <LADYLORD>! Ein böser Magier hat kleine Dörfer nördlich von hier übernommen. Er verwandelt die Bevölkerung in Sklaven für seine  stets wachsende Armee! Ich werde hier bleiben und unsere Verteidigung organisieren. Die anderen haben sich bereits im Gasthof versammelt.~
+@32 = ~Natürlich, guter Bürgermeister, wie könnte ich weniger tun? (Wer schreibt diesen Scheißdialog?)~
+@33 = ~Ich glaube nicht, Ihr Kerle seid auf Euch selbst gestellt.~
+@34 = ~Wieder einmal kommt Ihr zu uns in der Stunde der Not, <LADYLORD>. Bitte denkt daran, wenn entweder meine Frau oder ich ermordet werden, wird unsere spärliche Verteidigung zerbröckeln und alle sind verloren. Schützt uns um jeden Preis. Ha. Diesmal können die blöden Bürger nicht abgeschlachtet werden.~
+@35 = ~Natürlich, Bürgermeister. Fürchtet Euch nicht.~
+@36 = ~Bitte <LADYLORD>, ohne Euch haben wir keine Chance!~
+@37 = ~Sehr gern, aber ich erwarte, sehr gut belohnt zu werden.~
+@38 = ~Pah. DANN glaube ich, dass Ihr keine Chance habt, nicht wahr?~
+@39 = ~Sehr gern. Dann akzeptieren wir unser Schicksal, und mögen die Götter Euch für das niederschlagen, was Ihr getan habt. Scheißkerl.~
+@40 = ~Ha. Ich gestalte mein eigenes Schicksal, die Gotter verlangen nichtsdestoweniger.~
+
+@50 = ~Sie werden von einem starken Magier namens Jugend angeführt. Er hat zwei Leutnants, einem Magier namens Ayrus und eine Magierin namens Maia. Jeder von ihnen leitet eine Abteilung seiner Armee. Sein Sohn führt die dritte Abteilung. Hütet Euch vor seinem Sohn, er ist ein starker Kämpfer, mit dem nicht zu spaßen ist.~
+@51 = ~Angeblich ist seine Armee fast unerschöpflich, aber um fortsetzend Verstärkungen ins Spiel zu bringen, müssen seine beiden Leutnants und sein Sohn Portale offen halten.~
+@52 = ~Durch die Tötung seines Sohns werdet Ihr die unteren beiden Portale schließen und durch die Tötung seiner Leutnants werdet Ihr die drei oberen Portale schließen.~
+@53 = ~Wollt Ihr, dass ich Euch alle Arten von Dingen über Jugends Armee sage, die ich gar nicht wissen sollte?~
+@54 = ~Sicher. Ich liebe es immer, wenn Charaktere mir GENAU erklären, was ich tun soll.~
+@55 = ~Nein. Ich mag wirklich einige Dinge selbst herausfinden. Allerdings, nachdem ich fünf- oder sechsmal sterbe, werde ich die andere Option wählen.~
+@56 = ~Also, diejenigen, denen Ihr in der Vergangenheit geholfen habt, werden kommen, um Euch zu helfen. Setzt sie gut ein. Wir haben nur ein paar Minuten, bevor sie angreifen. Und vergesst nicht, LASST MICH NICHT STERBEN. Viel Glück. Dieser Tagelöhner wird sich in 5 Sekunden selbst zerstören.~
+@57 = ~Also gut dann.~
+@58 = ~Dann viel Glück, <LADYLORD>, wir haben nur ein paar Minuten, bevor sie angreifen.~
+
+@88 = ~Danke, <LADYLORD>! Ihr habt wieder einmal unser Dorf gerettet. Nehmt bitte dies als kleines Zeichen unseres Danks. Meine Frau und ich müssen jetzt dem Rest unserer Dorfbewohner helfen.~
+@89 = ~Warum müssen wir immer JEDEN retten? Oh. Stimmt. Weil es unglaublich langweilig wäre, wenn wir nur herumlaufen würden, während jemand anderes die ganze Arbeit täte. Es ist wie in meinem echten Leben.~
+
+// duwife.d
+// --------
+@59 = ~Ahhh!!~
+
+@101 = ~Wieder einmal habt Ihr uns gerettet, bitte sprecht mit meinem Mann.~
+@102 = ~Sehr wohl, meine Dame.~
+
+// dumad.d
+// -------
+@60 = ~Wir sind gekommen, um unseren Teil des Abkommens zu erfüllen. Wir werden helfen, das Dorf zu schützen. Sagt uns, was zu tun ist.~
+@61 = ~Großartig. Vielen Dank für Eure Hilfe, Madulf.~
+
+@99 = ~Es ist vorbei, wenn wir damit fertig sind, den Überlebenden zu helfen, werden wir zu unserem Platz im Norden des Dorfes zurückkehren.~
+@100 = ~Danke für Eure Hilfe, Madulf.~
+
+// dudyrad.d
+// ---------
+@62 = ~Seid gegrüßt, Beschützer des Waldes. Die Geister des Waldes sind gekommen, um Euch gegen das Böse zu helfen, das das Land bedroht.~
+@63 = ~Alle Hilfe ist willkommen. Der bevorstehende Kampf wird äußerst zäh sein.~
+
+// Seem to be unused
+// -----------------
+@41 = ~Jugend zieht Macht von einem seiner Untergebenen ab. Er wird völlig geheilt!~
+@42 = ~Jugend versucht, Macht von einem seiner Untergebenen abzuziehen, aber Ihr habt beide ermordet!~
+@43 = ~Ahh, verdammt. Dort geht der Bürgermeister.~
+@49 = ~Nun, <LADYLORD>, lasst mich Euch erzählen, was ich über unsere Angreifer erfahren habe...~ 
+
+
+/* --------- *
+ *  Scripts  *
+ * --------- */
+// duar1100.baf
+// ------------
+@98 = ~Mit Eurem letzten Streich fällt Jugend. Die Stadt Imnestal ist wieder sicher. Hoffentlich überlebten alle Städter unverletzt.~
+
+// duarim.baf, duayrus.baf, ducaster.baf, dufm.baf, dujug.baf, dumaia.baf, durak.baf
+// ---------------------------------------------------------------------------------
+@64 = ~Ein Zauberauslöser ist ausgelöst!~
+@65 = ~Ein Notfallzauber wird ausgelöst!~
+
+// duarim.baf
+// ----------
+@66 = ~Nein! Ihr WERDET sterben!~
+
+// dujug.baf
+// ---------
+@67 = ~HASEN?! Das ist das letzte Mal, dass ich JEMALS einen Notfallzauber wegen nahem Tod in einem Supermarkt kaufe!~
