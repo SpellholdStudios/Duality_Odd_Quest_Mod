@@ -120,7 +120,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Added German translation (from the BiG World Textpack German project).
 - Items descriptions: Added missing weight and restriction flags.
 - Split unique imnes.tra file into separate thematic files for more comfortable readability.
-- TODO Updated, renamed readme file to *.txt* and moved it into new "*readme*" folder.
+- Updated and renamed readme file to *imnesvale-readme.txt* and moved it into new "*readme*" folder.
 - Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
 - Removed useless backup folder.
 - Lower cased files.
