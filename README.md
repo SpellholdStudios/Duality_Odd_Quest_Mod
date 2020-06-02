@@ -41,10 +41,10 @@ The enemies range in level from 15 to 20 and have abilities to match. All enemie
 
 <details><summary><strong><ins>Minor SPOILER alert</ins></strong></summary>
 <br><p>
-###### Ayrus is wearing a ring that protects him from ALL fighter classes, grants slashing/crushing/piercing bonus and a decent AC bonus.</br>
-###### Maia is wearing a ring that protects her from ALL Mage classes and grants her high MR and immunity to Timestop.</br>
-###### You can obtain the aforementioned nifty rings. It is VERY hard however.</br>
-###### The Rakshasas have a very small chance of dropping one (and by small I mean 1 in 250)</br>
+- Ayrus is wearing a ring that protects him from ALL fighter classes, grants slashing/crushing/piercing bonus and a decent AC bonus.</br>
+- Maia is wearing a ring that protects her from ALL Mage classes and grants her high MR and immunity to Timestop.</br>
+- You can obtain the aforementioned nifty rings. It is VERY hard however.</br>
+- The Rakshasas have a very small chance of dropping one (and by small I mean 1 in 250)</br>
 </p>
 </details><br>
 
