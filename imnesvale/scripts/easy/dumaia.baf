@@ -5,7 +5,7 @@
 // to make sure he doesn't do the same thing over and over
 // The order is - Protections first, then dispelling enemy protections, then attack spells.
 
-ID
+IF
 	Global("casterStart","LOCALS",0)
 THEN
 	RESPONSE #100
