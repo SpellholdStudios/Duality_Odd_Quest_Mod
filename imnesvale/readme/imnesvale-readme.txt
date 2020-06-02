@@ -40,24 +40,24 @@ There are three difficulties:
 	(either that or if you just HAVE to have one of the nifty rings)
 
 Easy:
-	60 Seconds to prep at start
+	60 seconds to prep at start
 	Only 4 spawns, 90 seconds apart.
 	The four "bosses" have most of their triggers disabled.
 	
 Hard:
-	45 Seconds to prep at start
+	45 seconds to prep at start
 	9 Spawns, 90 seconds apart.
 	Some triggers enabled.
 
 Are You Out Of Your Freaking Mind?!:
-	30 Seconds to prep at start.
+	30 seconds to prep at start.
 	Never-ending spawns, 60 seconds apart. (unless you close the portals that is)
 	All triggers enabled. (This is bad, trust me)
 	
 
 F.A.Q.
 ======
-	Q. What is this mod.
+	Q. What is this mod?
 	A. It is a tactical challenge. You have to handle enemies coming from a number of directions, and you have a number of options in how you deal with them (all violent). 
 	Also, there is a good chance that you will have some help, thus, you must also look after a few allies. 
 	All while protecting two people who can not move.
@@ -67,7 +67,7 @@ F.A.Q.
 	A. Chapter 6, Umar Hills, ONLY if you killed the Shade Lord 
 	(I would advise doing this before leaving for Spellhold, otherwise, you may not be able to get your reward for killing the Shade Lord, although I have yet to test this)
 
-	Q. Why is the dialog so… Weird?
+	Q. Why is the dialog so weird?
 	A. Creations reflect their creators. I am insane, so the dialog is too. 
 	   ANY OTHER QUESTIONS?
 
