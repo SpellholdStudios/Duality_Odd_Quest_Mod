@@ -1,0 +1,2 @@
+- Check all .itm files, mostly opcodes.
+- Check unused files (mostly .itm).
