@@ -90,7 +90,7 @@ END
 
 IF ~~ THEN BEGIN death
 SAY @39
-IF ~~ THEN REPLY @40 DO ~SetGlobal("bigfatjerk","global",1)~ EXIT
+IF ~~ THEN REPLY @40 DO ~SetGlobal("bigfatjerk","GLOBAL",1)~ EXIT
 END
 
 IF ~~ THEN BEGIN information
@@ -111,7 +111,7 @@ END
 
 IF ~NumTimesTalkedTo(1)~ THEN BEGIN gratitude
 SAY @88
-IF ~~ THEN REPLY @89 DO ~GiveItemCreate("duRing", Player1, 1, 0, 0) ActionOverride("duwife", DestroySelf()) DestroySelf()~ EXIT
+IF ~~ THEN REPLY @89 DO ~GiveItemCreate("duRing",Player1,1,0,0) ActionOverride("duwife",DestroySelf()) DestroySelf()~ EXIT
 END
 
 BEGIN duwife
