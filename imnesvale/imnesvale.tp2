@@ -36,8 +36,9 @@ LANGUAGE ~English~
 /* ====================== *
  *  Imnesvale Mod : Easy  *
  * ====================== */
-BEGIN @1			// ~Easy~
-SUBCOMPONENT @0		// ~Install Imnesvale Mod~
+BEGIN @1											// ~Easy~
+SUBCOMPONENT @0										// ~Install Imnesvale Mod~
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @4	// ~You must have ToB, BGT, BG2:EE or EET installed to install this mod.~
 
 OUTER_SPRINT difficulty "easy"
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
@@ -48,6 +49,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  * ====================== */
 BEGIN @2			// ~Hard~
 SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @4
 
 OUTER_SPRINT difficulty "hard"
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
@@ -58,6 +60,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  * ===================================================== */
 BEGIN @3			// ~Are You Out Of Your Freaking Mind?!~
 SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @4
 
 OUTER_SPRINT difficulty "impossible"
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~

@@ -97,9 +97,10 @@ There are three difficulties:
 - TODO Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
 - Renamed *setup-imnesvale.tp2* -> *imnesvale.tp2* and moved it into mod top folder to support AL|EN's "Project Infinity".
 - TODO Replaced `AUTHOR` keyword with `SUPPORT`.
-- TODO Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
-- TODO Added component `DESIGNATED` numbers and "*demon_summoning_ritual*" `LABELS`.
-- TODO `HANDLE_CHARSETS` function.
+- TODO Added `VERSION` flag.
+- Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
+- TODO Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
+- TODO Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - TODO Added native BG2:EE and EET compatibility.
 - Included BWP Fixpack hotfixes:
@@ -109,10 +110,9 @@ There are three difficulties:
 	- duspawn1.baf and duspawn2.baf: replaced `true()` condition with `OnCreation()`.
 	- dumaim.itm: fixed wrong opcode #310 (Immunity to time stop) timing parameter (2-While equipped. Was set to 1).
 - TODO Added foreign languages WeiDU prompts whenever possible.
-- TODO Updated German, Italian and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
+- TODO Updated German and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
 - TODO Updated French and English translations (Gwendolyne).
-- TODO Split unique imnes.tra file into separate thematic files for more comfortable readability.
-- TODO Updated, renamed readme file to *.txt* and moved it into new "*readme*" folder.Removed useless backup folder.
+- Split unique imnes.tra file into separate thematic files for more comfortable readability.
 - TODO Updated, renamed readme file to *.txt* and moved it into new "*readme*" folder.
 - Removed useless backup folder.
 - Lower cased files.
@@ -120,7 +120,6 @@ There are three difficulties:
 - TODO Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
 - TODO Updated WeiDU installer to v246.
 - TODO Uploaded mod to official Spellhold Studios GitHub mirror account.
-
 
 ## 
 
