@@ -100,11 +100,13 @@ Version 2.0 (June 2d, 2020)
 - Renamed "setup-imnesvale.tp2" -> "imnesvale.tp2" and moved it into mod top folder to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added `VERSION` flag.
+- Added `README` command.
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added component `DESIGNATED` numbers and "imnesvale_easy", "imnesvale_hard" and "imnesvale_impossible" `LABELS`.
 - Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into main_component.tpa library for more comfortable readability and maintenance.
 - Added native BG2:EE and EET compatibility.
+- Fixed a bug compiling duar1100.baf: now the file is ONLY appended to AR1100.bcs.
 - Included BWP Fixpack hotfixes:
 	- ducleric.baf (easy): Lollorian's PARSE ERROR fix (replaced wrong spell id CLERIC_SHIELD_OF_ARCHONS with CLERIC_SHIELD_OF_THE_ARCHONS).
 	- duar1100.baf: Lollorian's typo fixes (removed the quotes from `GLOBAL` values).
