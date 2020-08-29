@@ -1,0 +1,172 @@
+
+/* ----------- *
+ *  Creatures  *
+ * ----------- */
+@101 = ~Guerriero~
+@102 = ~Mago~
+@103 = ~Chierico~
+@104 = ~Arcere~
+@105 = ~Guerriero/Ladro~
+@106 = ~Barbaro~
+@107 = ~Druido~
+@108 = ~Guerriero/Mago~
+@109 = ~Rakshasa~
+@110 = ~Demone~
+@111 = ~Demone della Fossa~
+@112 = ~Arimayus~
+@113 = ~Maia~
+@114 = ~Jugend~
+@115 = ~Ayrus~
+@116 = ~Spirito della Foresta~
+@117 = ~Madulf~
+@118 = ~Ministro Lloyd~
+@119 = ~Ogre~
+@120 = ~Minotauro~
+@121 = ~Gnoll~
+@122 = ~Orco~
+@123 = ~Madame Eina~
+@124 = ~Protettore della Foresta~
+@125 = ~Progenie1~
+@126 = ~Progenie2~
+
+/* ------- *
+ *  Items  *
+ * ------- */
+@201 = ~Anello~
+@202 = ~Anello di Anfetamine~
+@203 = ~E’ un anello, cos’altro hai bisogno di sapere?~
+@204 = ~Anello di Anfetamine
+Vrooooooooommmmmmm!
+Rende veloce il tuo attacco!
+
+STATISTICHE:
+
+Equipped abilities:
+- Aggiunge un attacco supplementare di 1/2 ad ogni round
+- Destrezza: bonus di +2
+
+Peso: 0
+
+Non utilizzabile da:
+ Ammazzastregoni~
+
+@211 = ~Mantello~
+@212 = ~Specchio Specchio Delle Mie Brame~
+@213 = ~Ad ogni modo chi legge le descrizione degli oggetto nonidentificati?~
+@214 = ~Specchio Specchio Delle Mie Brame
+
+STATISTICHE:
+
+Abilità di Equipaggiamento:
+- Riflette tutti gli attacchi a distanza
+- Bonus alla Classe Armatura: +1
+
+Peso: 3
+
+Non utilizzabile da:
+ Ammazzastregni~
+
+@221 = ~Abito~
+@222 = ~Abito del Mago da Battaglia~
+@223 = ~Identificalo.~
+@224 = ~Abito del Mago da Battaglia
+
+STATISTICHE:
+
+Abilità di Equipaggiamento:
+- Bonus alla Classe Armatura: 1
+- Incrementa la velocità di lancio degli incantesimi di 2
+- Aggiunge un attacco supplementare di 1/2 ad ogni round
+- Resistenza ai Danni da Schiacciamento: +40%
+- Rigenera 1 Punto ferita ogni 3 secondi
+
+- Resistenza ai Danni Taglienti: -10%
+- Resistenza ai Danni Perforanti: -25%
+- Incantesimi da mago memorizzati meno uno ai livelli 1, 2, 3, 4, 5 e 6
+
+Peso: 4
+
+Utilizzabile da:
+ Mago~
+
+@231 = ~Elmo~
+@232 = ~Elmo della Mortalità ~
+@233 = ~Ahi~
+@234 = ~Elmo della Mortalità
+Questo elmo incredibilmente potente conferisce diverse protezioni impressionanti al suo possessore.
+Lo svantaggio é che per proteggere il suo possessore l’elmo deve assorbire la vitalità del suo proprietario.
+
+STATISTICHE:
+
+Abilità di Equipaggiamento:
+- Immunità a Fermare il Tempo
+- Immunità all’Imprigionamento
+- Resistenza alla Magia: +50%
+
+- -2 al Massimo dei Punti ferita OGNI volta che viene indossato (l’effetto è permanente)
+- -20 al Massimo dei Punti ferita mentre è indossato
+- Costituzione: impostata a 5
+
+Peso: 2
+
+Non utilizzabile da:
+ Ammazzastregoni
+ Kensai~
+
+@241 = ~Bracciali~
+@242 = ~Sbrigati! Sbrigati!~
+@243 = ~Cosa?~
+@244 = ~Sbrigati! Sbrigati!
+Oooohhh, ha un’abile effetto. Peccato che non puoi colpire violentemente la fiancata di un fienile.
+
+STATISTICHE:
+
+Abilità di Equipaggiamento:
+- Velocità Potenziata Permanente
+- THACO: -5 di Bonus
+
+Peso: 2
+
+Non utilizzabile da:
+ Ammazzastregoni
+ Kensai~
+
+@251 = ~La Serenità dei Guerrieri~
+@252 = ~La Serenità dei Guerrieri
+Se riesci a trovare questo oggetto, considerati fortunato, é MOLTO difficile da trovare. Se hai imbrogliato, sarai colpito da un oggetto pesante.
+
+STATISTICHE:
+
+Abilità di Equipaggiamento:
+- Concede diverse protezioni a tutte le classi di Guerrieri.
+- Bonus della Classe Armatura: +4
+- Resistenza ai Danni Perforanti, Contundenti, Taglienti: +25%
+
+Peso: 0
+
+Non utilizzabile da:
+ Ammazzastregoni~
+
+@261 = ~La Serenità dei Maghi ~
+@262 = ~La Serenità dei Maghi
+Se riesci a trovare questo oggetto, considerati fortunato, é MOLTO difficile da trovare.
+Se hai imbrogliato, sarai colpito da un oggetto pesante.
+
+STATISTICHE:
+
+Abilità di Equipaggiamento:
+- Concede diverse protezioni a tutte le classi di Maghi.
+- Resistenza alla Magia: +80%
+- Immunità a Fermare il Tempo
+
+Peso: 0
+
+Non utilizzabile da:
+ Ammazzastregoni~
+
+
+/* ================= *
+ *  Usability flags  *
+ * ================= */
+@9001 = ~[Uu]tilizzabile[ %tab%]+[Dd]a[ %tab%]*:~
+@9002 = ~\([Nn]on[ %tab%]+\|[Ii]n\)[Uu]tilizzabile[ %tab%]+[Dd]a[ %tab%]*:~

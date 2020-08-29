@@ -65,6 +65,11 @@ LANGUAGE ~Russian (translation by prowler)~
 		 ~imnesvale/lang/russian/setup.tra~
 		 ~imnesvale/lang/russian/misc.tra~
 
+LANGUAGE ~Italiano (traduzione di ilot)~
+         ~italian~
+		 ~imnesvale/lang/italian/setup.tra~
+		 ~imnesvale/lang/italian/misc.tra~
+
 
 /* ====================== *
  *  Imnesvale Mod : Easy  *

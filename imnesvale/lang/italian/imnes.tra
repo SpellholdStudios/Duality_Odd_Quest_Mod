@@ -1,0 +1,116 @@
+/* --------- *
+ *  Dialogs  *
+ * --------- */
+// dujug.d
+// -------
+@1  = ~Chi sei tu? Non ha importanza, io devo andare a conquistare questa miserabile città. Questa è solo una piccola fermata per la conquista del mondo. Inchinati al tuo nuovo padrone ed io potrei risparmiare la tua miserevole vita.~
+@2  = ~Um. Hai qualche idea di chi sono? O sei solo un altro stupido megalomane maniaco? Io credo tu appartenga alla seconda ipotesi.~
+@3  = ~Uh. Salve.~
+@4  = ~Per gli dei, un altro. C’è qualcosa nell’acqua che bevo o sono io che attraggo semplicemente i pazzi?~
+@5  = ~Cosa? Il verme intende affrontarmi? Continua allora, patetico.~
+@6  = ~Dannazione, perché, perché, perché, io? Vuoi andartene pacificamente o devo romperti il cranio?~
+@7  = ~Uh. Con cosa posso aiutarti?~
+@8  = ~Tu. Come osi. Insultare. Me?! Ha! Io non macchierò la mia lama con il sangue di un disgraziato come te. Cadete per mano dei miei schiavi!~
+@9  = ~Oh levati dai piedi.~
+@10  = ~Dicono tutti che sono pazzo, ma io gli dimostrerò.... Io proverò che è giusta la mia teoria secondo la quale il nostro universo non è niente di più che un granello di sabbia su una spiaggia infinita! Oops. Gioco sbagliato. Um. Si, beh, ora me ne vado.~
+@11 = ~Credo che piangerò.~
+@12 = ~Desideri sapere la storia della mia vita? Molto bene. Beh, tanto per iniziare io sono nato a..~
+@13 = ~In realtà non ho chiesto la storia della tua vita, vorrei semplicemente sapere cosa diamine stai facendo qui. Così saprò se devo o non devo ucciderti.~
+@14 = ~Um. Io odio essere interrotto, ma possiamo darci un taglio e passare alla parte violenta?~
+@15 = ~Oh. Ma non vuoi ascoltare la tragica storia del mio passato?~
+@16 = ~No, veramente no. Alla fine credo che ti ucciderò, quindi cosa vuoi che mi interessa il tuo tragico passato?~
+@17 = ~*sigh* Suppongo che sia così. Non è piacevole non aver ho nulla di meglio da fare che salvare un elfo di città da un pazzo psicopatico, ad esempio.~
+@18 = ~Molto bene persona debole. Prega i tuoi dei prima che ti schiacci.~
+@19 = ~D’accordo. Passiamo alla violenza!~
+@20 = ~Molto bene, tutto ebbe inizio durante il Periodo dei Disordini quando gli dei furono costretti a camminare sulla terra. Siccome potresti anche non saperlo il dio Bhaal generò dei figli con degli esseri mortali affinché lo aiutassero nelle sua resurrezione. Io sono uno di quei figli, mia madre era una potentissima maga al servizio di uno dei tempi di Bhaal. Quando venne il tempo di sacrificarmi, mia madre non riuscì a sopportarlo, e mi ha rapito.~
+@21 = ~E a me dovrebbe interessare..... perché?~
+@22 = ~Oh uomo, un altro dei miei fratelli con stupidi sogni di conquista, facciamola finite e battiamoci l’un l’altro fino alla morte, in ogni caso è così che andrebbe a finire credo.~
+@23 = ~Silenzio mortale! Permettimi di finire la storia. Ahem. Ora, coma STAVO DICENDO mia madre mi rapì, ma fu ferita gravemente durante il tentativo. Lei morì poco dopo, lasciandomi là, un piccolo bambino, da solo in questo mondo crudele.~
+@24 = ~Ok, ne ho avuto abbastanza di questa piagnucolosa storia. E’ tempo di morire.~
+@25 = ~Ti prego, continua, sembra che tu abbia avuto un’infanzia orribile.~
+@26 = ~Osi trattarmi con condiscendenza?!? Hai qualche idea con chi tu stia avendo a che fare? Muori, impertinente!~
+@27 = ~Hops, dovresti vedere quello che arriva.~
+@28 = ~Hai ucciso mio figlio, ora mi occuperò personalmente di te, preparati a soffrire un’eternità di tormenti! L’hai fatto sembrare drammaticamente eccessivo? Non riesco assolutamente a sopportarlo.~
+@29 = ~Un pò, per l’intera eternità mi sembra un pò eccessivo, ma ehi, che importa, in ogni caso ci macelleremo a vicenda.~
+@30 = ~Niente affatto, abbiamo semplicemente tagliato tuo figlio  in pezzetti molto piccolo. E tu sarai il prossimo.~
+
+@44 = ~Piangere? Aspetta, credo di avere un fazzoletto qui, da qualche parte...~
+@45 = ~Fruga in un grande borsone....~
+@46 = ~Aspetta! Stai cercando di ingannarmi! Io non possiedo un fazzoletto! Ora i miei schiavi ti distruggeranno.~
+@47 = ~Non riesco mai a combattere contro una SANA persona malvagia? Sarebbe chiedere troppo, vero?~
+@48 = ~Aspetta, non dirmi che tu sei un altro tipo benevolo, che interferisce sempre con i grandi piani di una povera progenie di Bhaal come me. Le persona come te non hanno NIENTE di meglio da fare? Come aiutare le persone anziane per la strada o qualcosa di simile? Beh, non importa, io sto cercando di conquistare questa città! E per una volta il malvagio ha una buona possibilità di vincere!~
+
+// dumayor.d
+// ---------
+@31 = ~Ti prego, devi proteggere il nostro povero villaggio <LADYLORD>! Un mago malvagio ha gia conquistato dei piccoli villaggi a nord di qui. Lui rende la popolazione delle terre conquistate schiava per il suo esercito sempre n crescita! Io rimarrò qui ad organizzare la nostra difesa. Gli altri si sono già raccolti nelle locanda.~
+@32 = ~Naturalmente buon sindaco, come potrei fare qualcosa di meno? (Chi ha scritto questo brutto dialogo?)~
+@33 = ~I don't think so, you guys are on your own.~
+@34 = ~Ancora una volta arrivi nel nostro villaggio nel momento del bisogno, <LADYLORD>. Ti prego ricordati, se io o mia moglie verremo uccisi, le nostre deboli difese crolleranno e tutti saranno perduti. Proteggici a tutti i costi. Ha. Per una volta i civili silenziosi non potranno essere macellati.~
+@35 = ~naturalmente sindaco. Non temete.~
+@36 = ~Per favore <LADYLORD>, senza di te non abbiamo nessuna possibilità!~
+@37 = ~Molto bene, ma mi aspetto una generosa ricompensa.~
+@38 = ~Pfagh. ALLORA credo non hai nessuna possibilità?~
+@39 = ~Molto bene. Allora accetteremo il nostro destino, e che gli dei possano colpirti per quello che hai fatto. Sei un essere malvagio.~
+@40 = ~Ha. Sono io a crearmi il destino, a dispetto degli dei.~
+
+@50 = ~Sono guidati da un potente mago chiamato Jugend. Lui ha due luogotenenti, un mago chiamato Ayrus ed una maga chiamata Maia. Entrambi sono al comando di una sezione dell’esercito. Attenzione a suo figlio, è un potente guerriero e non è non sottovalutarlo.~
+@51 = ~Apparentemente il suo esercito sembrerebbe infinito perché continua ad ottenere rinforzi, i suo i due luogotenenti e suo figlio devono avere dei portali che tengono aperti per ottenere rinforzi.~
+@52 = ~Uccidendo suo figlio poi riuscirai a chiuderei due portali inferiori, ed uccidendo I suoi luogotenenti sarai in grado di chiudere il terzo portale, che é il maggiore.~
+@53 = ~Desideri raccontarmi tutti i tipi di cose riguardanti l’esercito di Jugend che non ho assolutamente bisogno di sapere?~
+@54 = ~Certamente. Mi é sempre piaciuto quando le persone spiegano ESATTAMENTE quello che bisognerebbe fare.~
+@55 = ~No. A me piace davvero calcolare da me alcune cose. Ricordati, una volta che sarò morto cinque o sei volte di scegliere un’altra opzione.~
+@56 = ~Inoltre, coloro che hai aiutato in passato verranno ad aiutarti. Utilizza bene il loro aiuto. Abbiamo solo alcuni minuti prima del loro attacco. A non dimenticarti, NON LASCIARMI MORIRE. Buona fortuna. Questo peone si autodistruggerà in 5 secondi.~
+@57 = ~Uh. Si. Ok allora.~
+@58 = ~Buona fortuna allora <LADYLORD>, noi abbiamo solo alcuni minuti prima del loro attacco.~
+
+@88 = ~Grazie <LADYLORD>! Hai salvato il nostro villaggio ancora una volta. Per favore, prendi questo come piccolo ringraziamento. Mia moglie ed io adesso dobbiamo aiutare il resto degli abitanti del villaggio.~
+@89 = ~Perchè dobbiamo sempre aiutare CHIUNQUE? Oh. D’accordo. Poiché ci annoieremo a morte se dovremmo semplicemente camminare qui intorno  mentre qualcun altro fa tutto il lavoro. Questa è la mia vita reale.~
+
+// duwife.d
+// --------
+@59 = ~Ahhh!!~
+
+@101 = ~Ancora una volta, ci hai salvato, tu prego, parla a mio marito.~
+@102 = ~Molto bene, mia signora.~
+
+// dumad.d
+// -------
+@60 = ~Dobbiamo adempiere alla nostra parte di accordo. Aiuteremo a proteggere il villaggio. Dicci quello che dobbiamo fare.~
+@61 = ~Magnifico. Grazie per il tuo aiuto Madulf.~
+
+@99 = ~E’ finito, quando avremo terminato di aiutare I sopravvissuti, ritorneremo al nostro posto a nord del villaggio.~
+@100 = ~Grazie per il tuo aiuto Madulf.~
+
+// dudyrad.d
+// ---------
+@62 = ~Salve protettori della foresta. Gli spiriti della foresta devono venire ad aiutarti contro il male che minaccia la terra.~
+@63 = ~Ogni aiuto é apprezzato. La guerra che verrà sarà estremamente dura.~
+
+// Seem to be unused
+// -----------------
+@41 = ~Jugend ha tolto il potere da uno dei suoi subordinati. E’ pienamente guarito!~
+@42 = ~Jugend ha cercato di prendere il potere da uno dei suoi subordinati, ma hai ucciso entrambi!~
+@43 = ~Awww, diamine. Il sindaco é andato.~
+@49 = ~Ora <LADYLORD> lascia che ti racconti quello che conosco sui nostri assalitori...~
+
+
+/* --------- *
+ *  Scripts  *
+ * --------- */
+// duar1100.baf
+// ------------
+@98 = ~Con il tuo ultimo colpo Jugend cade. La città di Imnesvale é salva ancora una volta. Si spera che tutti i cittadini sono rimasti illesi.~
+
+// duarim.baf, duayrus.baf, ducaster.baf, dufm.baf, dujug.baf, dumaia.baf, durak.baf
+// ---------------------------------------------------------------------------------
+@64 = ~Un Attivatore di Incantesimi é stato attivato!~
+@65 = ~Una Contingenza é stata attivata!~
+
+// duarim.baf
+// ----------
+@66 = ~No! Tu MORIRAI!~
+
+// dujug.baf
+// ---------
+@67 = ~CONIGLI?! Questa é l’ultima volta che ACQUISTO una Contingenza Vicino alla Morte in un negozio di prezzi bassi!~
+
