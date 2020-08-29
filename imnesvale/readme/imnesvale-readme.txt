@@ -95,15 +95,18 @@ END SPOILERS
 VERSION HISTORY
 ===============
 
+Version 2.1 (August 30, 2020)
+- Added Italian translation (by ilot).
+
 Version 2.0 (June 2d, 2020)
 - Added "imnesvale.ini" metadata file to support AL|EN's "Project Infinity".
 - Renamed "setup-imnesvale.tp2" -> "imnesvale.tp2" and moved it into mod top folder to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added `VERSION` flag.
 - Added `README` command.
+- Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added component `DESIGNATED` numbers and "imnesvale_easy", "imnesvale_hard" and "imnesvale_impossible" `LABELS`.
-- Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into main_component.tpa library for more comfortable readability and maintenance.
 - Added native BG2:EE and EET compatibility.
 - Fixed a bug compiling duar1100.baf: now the file is ONLY appended to AR1100.bcs.
@@ -114,7 +117,7 @@ Version 2.0 (June 2d, 2020)
 	- duspawn1.baf and duspawn2.baf: replaced `true()` condition with `OnCreation()`.
 	- dumaim.itm: fixed wrong opcode #310 (Immunity to time stop) timing parameter (2-While equipped. Was set to 1).
 - Added foreign languages WeiDU prompts whenever possible.
-- Updated English, German and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
+- Updated English, German and Russian tra files for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games.
 - Added Russian translation by prowler.
 - Added German translation (from the BiG World Textpack German project).
 - Items descriptions: Added missing weight and restriction flags.
