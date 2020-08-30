@@ -1,7 +1,7 @@
 
 ![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Duality_Odd_Quest_Mod?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
-![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20German%20%7C%20Russian&color=limegreen)
+![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20German%20%7C%20Italian%20%7C%20Russian&color=limegreen)
 
 <div align="center"><h1></a>Duality's Odd Quest Mod (or simply Imnesvale)</h1>
 
@@ -15,12 +15,13 @@ Baldur's Gate Trilogy and EET<h3>
 **Mod Website:** <a href="http://www.shsforums.net/forum/234-miscellaneous-released-mods/">Spellhold Studios</a>  
 **Mod Forum:** <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/">D's Odd Quest Mod</a>  
 
+## 
 
 [Read the mod's readme](http://spellholdstudios.github.io/readmes/imnesvale-readme.txt)
 
 [Download the mod at Spellhold Studios](http://www.shsforums.net/files/file/614-ds-odd-quest-mod/)<br>
 
-&nbsp;
+## 
 
 <div align="center">
 <a href="#intro">Overview</a> &#8226; <a href="#compat">Compatibility</a> &#8226; <a href="#installation">Installation</a> &#8226; <a href="#components">Components</a>&#8226; <a href="#faq">FAQ</a> &#8226; <a href="#credits">Credits and Acknowledgements</a> &#8226; <a href="#versions">Version History</a></br>
@@ -109,9 +110,9 @@ D's Odd Quest Mod for Linux is distributed in the same compressed archive and do
 
 Extract the contents of the mod to the folder of the game you wish to modify.
 
-Download the latest version of WeiDU for Linux from <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a> and copy weidu and weinstall to /usr/bin. Following that, open a terminal, **cd** to your game installation directory, run tolower and answer 'Y' to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lowercased file names. If you're unsure, running tolower and choosing both options is the safe bet.
+Download the latest version of WeiDU for Linux from <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a> and copy weidu and weinstall to /usr/bin. Following that, open a terminal, **`cd`** to your game installation directory, run tolower and answer 'Y' to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lowercased file names. If you're unsure, running tolower and choosing both options is the safe bet.
 
-To install, run **`weinstall setup-imnesvale`** in your game folder. Then run **`wine BGMain.exe`** and start playing.
+To install, run **`weinstall setup-imnesvale`** in your game folder. Then run **`wine BGMain.exe`** (or **`wine baldur.exe`** for EE games) and start playing.
 
 ## 
 
@@ -127,7 +128,7 @@ In addition to the methods above for removing individual components, you can com
 ## <a name="components" id="components"></a>Components
 
 The installer splits main component into three sub components, letting the player decide which difficulty level he/she wants to plays.  
-The number of each is the component DESIGNATED number which gives it a fixed install position and allows automated installers to specify component choices.<br />
+The number of each is the component `DESIGNATED` number which gives it a fixed install position and allows automated installers to specify component choices.<br />
 
 ## 
 
@@ -193,11 +194,12 @@ A: Hold is cheap. They are triggered to get rid of any hold/stun spells and fry 
 
 #### Special Acknowledgements to:
 
+- ilot: Italian translation.
 - AL|EN: Wrote process which automatically provides Windows, Linux and Mac versions in the same archive file.
-- The BiG World Textpack German team: Provided German translation.
-- Prowler: Provided Russian translation.
+- The BiG World Textpack German team: German translation.
+- Prowler: Russian translation.
 
-If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/">mod forum</a>.</br>
+&#9755; If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/">mod forum</a>.</br>
 
 ## 
 
@@ -232,6 +234,12 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## <a name="versions" id="versions"></a>Versions History
 
+##### Version 2.1 (August 30, 2020)
+
+- Added Italian translation (by ilot).
+
+## 
+
 ##### Version 2.0 (June 2d, 2020)
 
 - Added *imnesvale.ini* metadata file to support AL|EN's "Project Infinity".
@@ -239,9 +247,9 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added `VERSION` flag.
 - Added `README` command.
+- Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Added `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added component `DESIGNATED` numbers and "*imnesvale_easy*", "*imnesvale_hard*" and "*imnesvale_impossible*" `LABELS`.
-- Added missing `HANDLE_CHARSETS` function to convert string entries for EE games.
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Added native BG2:EE and EET compatibility.
 - Fixed a bug compiling duar1100.baf: now the file is ONLY appended to AR1100.bcs.
@@ -252,7 +260,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 	- duspawn1.baf and duspawn2.baf: replaced `true()` condition with `OnCreation()`.
 	- dumaim.itm: fixed wrong opcode #310 (Immunity to time stop) timing parameter (2-While equipped. Was set to 1).
 - Added foreign languages WeiDU prompts whenever possible.
-- Updated English, German and Russian tra files for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
+- Updated English, German and Russian tra files for compatibility with `GW_UPDATE_ITM_DESCRIPTION_TO_EE` WeiDU function requirements which automatically removes usability restrictions for EE games.
 - Added Russian translation by <a href="http://www.shsforums.net/topic/32419-ds-odd-quest-mod/#entry474578">prowler</a>.
 - Added German translation (from the BiG World Textpack German project).
 - Items descriptions: Added missing weight and restriction flags.
